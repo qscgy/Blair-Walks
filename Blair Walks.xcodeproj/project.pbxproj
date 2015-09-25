@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		220496831BB4C6CF00783070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496821BB4C6CF00783070 /* AppDelegate.swift */; };
+		220496851BB4C6D000783070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496841BB4C6D000783070 /* ViewController.swift */; };
+		220496881BB4C6D000783070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220496861BB4C6D000783070 /* Main.storyboard */; };
+		2204968A1BB4C6D000783070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 220496891BB4C6D000783070 /* Assets.xcassets */; };
+		2204968D1BB4C6D100783070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */; };
+		220496981BB4C6D100783070 /* Blair_WalksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496971BB4C6D100783070 /* Blair_WalksTests.swift */; };
+		220496A31BB4C6D100783070 /* Blair_WalksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496A21BB4C6D100783070 /* Blair_WalksUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		220496941BB4C6D100783070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 220496771BB4C6CF00783070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2204967E1BB4C6CF00783070;
+			remoteInfo = "Blair Walks";
+		};
+		2204969F1BB4C6D100783070 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 220496771BB4C6CF00783070 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2204967E1BB4C6CF00783070;
+			remoteInfo = "Blair Walks";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2204967F1BB4C6CF00783070 /* Blair Walks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blair Walks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		220496821BB4C6CF00783070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		220496841BB4C6D000783070 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		220496871BB4C6D000783070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		220496891BB4C6D000783070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2204968C1BB4C6D100783070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2204968E1BB4C6D100783070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220496931BB4C6D100783070 /* Blair WalksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blair WalksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		220496971BB4C6D100783070 /* Blair_WalksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blair_WalksTests.swift; sourceTree = "<group>"; };
+		220496991BB4C6D100783070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2204969E1BB4C6D100783070 /* Blair WalksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blair WalksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		220496A21BB4C6D100783070 /* Blair_WalksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blair_WalksUITests.swift; sourceTree = "<group>"; };
+		220496A41BB4C6D100783070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2204967C1BB4C6CF00783070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		220496901BB4C6D100783070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2204969B1BB4C6D100783070 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		220496761BB4C6CF00783070 = {
+			isa = PBXGroup;
+			children = (
+				220496811BB4C6CF00783070 /* Blair Walks */,
+				220496961BB4C6D100783070 /* Blair WalksTests */,
+				220496A11BB4C6D100783070 /* Blair WalksUITests */,
+				220496801BB4C6CF00783070 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		220496801BB4C6CF00783070 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2204967F1BB4C6CF00783070 /* Blair Walks.app */,
+				220496931BB4C6D100783070 /* Blair WalksTests.xctest */,
+				2204969E1BB4C6D100783070 /* Blair WalksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		220496811BB4C6CF00783070 /* Blair Walks */ = {
+			isa = PBXGroup;
+			children = (
+				220496821BB4C6CF00783070 /* AppDelegate.swift */,
+				220496841BB4C6D000783070 /* ViewController.swift */,
+				220496861BB4C6D000783070 /* Main.storyboard */,
+				220496891BB4C6D000783070 /* Assets.xcassets */,
+				2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */,
+				2204968E1BB4C6D100783070 /* Info.plist */,
+			);
+			path = "Blair Walks";
+			sourceTree = "<group>";
+		};
+		220496961BB4C6D100783070 /* Blair WalksTests */ = {
+			isa = PBXGroup;
+			children = (
+				220496971BB4C6D100783070 /* Blair_WalksTests.swift */,
+				220496991BB4C6D100783070 /* Info.plist */,
+			);
+			path = "Blair WalksTests";
+			sourceTree = "<group>";
+		};
+		220496A11BB4C6D100783070 /* Blair WalksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				220496A21BB4C6D100783070 /* Blair_WalksUITests.swift */,
+				220496A41BB4C6D100783070 /* Info.plist */,
+			);
+			path = "Blair WalksUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2204967E1BB4C6CF00783070 /* Blair Walks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 220496A71BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair Walks" */;
+			buildPhases = (
+				2204967B1BB4C6CF00783070 /* Sources */,
+				2204967C1BB4C6CF00783070 /* Frameworks */,
+				2204967D1BB4C6CF00783070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blair Walks";
+			productName = "Blair Walks";
+			productReference = 2204967F1BB4C6CF00783070 /* Blair Walks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		220496921BB4C6D100783070 /* Blair WalksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 220496AA1BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair WalksTests" */;
+			buildPhases = (
+				2204968F1BB4C6D100783070 /* Sources */,
+				220496901BB4C6D100783070 /* Frameworks */,
+				220496911BB4C6D100783070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				220496951BB4C6D100783070 /* PBXTargetDependency */,
+			);
+			name = "Blair WalksTests";
+			productName = "Blair WalksTests";
+			productReference = 220496931BB4C6D100783070 /* Blair WalksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2204969D1BB4C6D100783070 /* Blair WalksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 220496AD1BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair WalksUITests" */;
+			buildPhases = (
+				2204969A1BB4C6D100783070 /* Sources */,
+				2204969B1BB4C6D100783070 /* Frameworks */,
+				2204969C1BB4C6D100783070 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				220496A01BB4C6D100783070 /* PBXTargetDependency */,
+			);
+			name = "Blair WalksUITests";
+			productName = "Blair WalksUITests";
+			productReference = 2204969E1BB4C6D100783070 /* Blair WalksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		220496771BB4C6CF00783070 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "MBHS Smartphone Programming Club";
+				TargetAttributes = {
+					2204967E1BB4C6CF00783070 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					220496921BB4C6D100783070 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 2204967E1BB4C6CF00783070;
+					};
+					2204969D1BB4C6D100783070 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 2204967E1BB4C6CF00783070;
+					};
+				};
+			};
+			buildConfigurationList = 2204967A1BB4C6CF00783070 /* Build configuration list for PBXProject "Blair Walks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 220496761BB4C6CF00783070;
+			productRefGroup = 220496801BB4C6CF00783070 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2204967E1BB4C6CF00783070 /* Blair Walks */,
+				220496921BB4C6D100783070 /* Blair WalksTests */,
+				2204969D1BB4C6D100783070 /* Blair WalksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2204967D1BB4C6CF00783070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2204968D1BB4C6D100783070 /* LaunchScreen.storyboard in Resources */,
+				2204968A1BB4C6D000783070 /* Assets.xcassets in Resources */,
+				220496881BB4C6D000783070 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		220496911BB4C6D100783070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2204969C1BB4C6D100783070 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2204967B1BB4C6CF00783070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220496851BB4C6D000783070 /* ViewController.swift in Sources */,
+				220496831BB4C6CF00783070 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2204968F1BB4C6D100783070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220496981BB4C6D100783070 /* Blair_WalksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2204969A1BB4C6D100783070 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				220496A31BB4C6D100783070 /* Blair_WalksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		220496951BB4C6D100783070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2204967E1BB4C6CF00783070 /* Blair Walks */;
+			targetProxy = 220496941BB4C6D100783070 /* PBXContainerItemProxy */;
+		};
+		220496A01BB4C6D100783070 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2204967E1BB4C6CF00783070 /* Blair Walks */;
+			targetProxy = 2204969F1BB4C6D100783070 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		220496861BB4C6D000783070 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				220496871BB4C6D000783070 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2204968C1BB4C6D100783070 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		220496A51BB4C6D100783070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		220496A61BB4C6D100783070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		220496A81BB4C6D100783070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Blair Walks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-Walks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		220496A91BB4C6D100783070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Blair Walks/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-Walks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		220496AB1BB4C6D100783070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Blair WalksTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-WalksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blair Walks.app/Blair Walks";
+			};
+			name = Debug;
+		};
+		220496AC1BB4C6D100783070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Blair WalksTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-WalksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Blair Walks.app/Blair Walks";
+			};
+			name = Release;
+		};
+		220496AE1BB4C6D100783070 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Blair WalksUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-WalksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Blair Walks";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		220496AF1BB4C6D100783070 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Blair WalksUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-WalksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Blair Walks";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2204967A1BB4C6CF00783070 /* Build configuration list for PBXProject "Blair Walks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220496A51BB4C6D100783070 /* Debug */,
+				220496A61BB4C6D100783070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		220496A71BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair Walks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220496A81BB4C6D100783070 /* Debug */,
+				220496A91BB4C6D100783070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		220496AA1BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair WalksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220496AB1BB4C6D100783070 /* Debug */,
+				220496AC1BB4C6D100783070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		220496AD1BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair WalksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				220496AE1BB4C6D100783070 /* Debug */,
+				220496AF1BB4C6D100783070 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 220496771BB4C6CF00783070 /* Project object */;
+}
