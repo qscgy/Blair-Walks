@@ -65,10 +65,10 @@ class Graph{
     
     //find shortest path with Dijkstra's algorithm
     func findShortestPath(start:String,end:String){
-        var source=Vertex(name: start)
+        let source=Vertex(name: start)
         var cameFrom=[Vertex: Vertex]()
         //var costTo=[Vertex: Int]()
-        var frontier=PriorityQueue<Vertex>(headVal: source, headPri: 0)
+        let frontier=PriorityQueue<Vertex>(headVal: source, headPri: 0)
         source.dist=0
         
         var current:Vertex
@@ -99,13 +99,13 @@ class Graph{
     }
 }
 
+func printPath(cameFrom:[Vertex: Vertex],end:Vertex){
+    
+}
+
 //protocol-required operators for Vertex
 func ==(left: Vertex, right: Vertex) -> Bool {
     return left.hashValue == right.hashValue
-}
-
-func printPath(cameFrom:[Vertex: Vertex],end:Vertex){
-    
 }
 
 func <(l:Vertex,r:Vertex)->Bool{
