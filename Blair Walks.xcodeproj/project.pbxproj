@@ -14,6 +14,8 @@
 		2204968D1BB4C6D100783070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */; };
 		220496981BB4C6D100783070 /* Blair_WalksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496971BB4C6D100783070 /* Blair_WalksTests.swift */; };
 		220496A31BB4C6D100783070 /* Blair_WalksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496A21BB4C6D100783070 /* Blair_WalksUITests.swift */; };
+		220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B01BB4C81300783070 /* PathfinderModel.swift */; settings = {ASSET_TAGS = (); }; };
+		220496B31BB4D7DD00783070 /* PQNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B21BB4D7DD00783070 /* PQNode.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2204969E1BB4C6D100783070 /* Blair WalksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Blair WalksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		220496A21BB4C6D100783070 /* Blair_WalksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blair_WalksUITests.swift; sourceTree = "<group>"; };
 		220496A41BB4C6D100783070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		220496B01BB4C81300783070 /* PathfinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfinderModel.swift; sourceTree = "<group>"; };
+		220496B21BB4D7DD00783070 /* PQNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				220496821BB4C6CF00783070 /* AppDelegate.swift */,
 				220496841BB4C6D000783070 /* ViewController.swift */,
+				220496B21BB4D7DD00783070 /* PQNode.swift */,
+				220496B01BB4C81300783070 /* PathfinderModel.swift */,
 				220496861BB4C6D000783070 /* Main.storyboard */,
 				220496891BB4C6D000783070 /* Assets.xcassets */,
 				2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */,
@@ -255,7 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */,
 				220496851BB4C6D000783070 /* ViewController.swift in Sources */,
+				220496B31BB4D7DD00783070 /* PQNode.swift in Sources */,
 				220496831BB4C6CF00783070 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Blair Walks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-Walks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -410,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Blair Walks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-Walks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,6 +493,7 @@
 				220496A91BB4C6D100783070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		220496AA1BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair WalksTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +502,7 @@
 				220496AC1BB4C6D100783070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		220496AD1BB4C6D100783070 /* Build configuration list for PBXNativeTarget "Blair WalksUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +511,7 @@
 				220496AF1BB4C6D100783070 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
