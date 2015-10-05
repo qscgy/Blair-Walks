@@ -36,10 +36,15 @@ class PriorityQueue<T>{
                 atEnd=true
             }
         }
+        if let _=last.next{
+            
+        } else {
+            atEnd=true
+        }
         if atEnd{   //last.next is nil
             last.next=PQNode<T>(value: val, priority: pri)
         } else {
-            //last -> last.next -> tmp
+            //last -> new node -> tmp
             let tmp=last.next!  //we know it's not nil
             last.next=PQNode<T>(value: val, priority: pri)
             last.next!.next=tmp

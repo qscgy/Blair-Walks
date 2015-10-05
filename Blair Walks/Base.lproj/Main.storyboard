@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,8 +18,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6N-NV-YBy">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Sa-2c-ILx">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Wc5-O5-aGp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Wc5-O5-aGp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Wc5-O5-aGp"/>
+                                    </mask>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lea-r6-Ang">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUm-OZ-Ehu">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Lea-r6-Ang" firstAttribute="top" secondItem="5Sa-2c-ILx" secondAttribute="bottom" constant="32" id="4sv-ds-YNE"/>
+                            <constraint firstItem="Lea-r6-Ang" firstAttribute="leading" secondItem="5Sa-2c-ILx" secondAttribute="leading" id="HHG-f3-ORW"/>
+                            <constraint firstItem="5Sa-2c-ILx" firstAttribute="leading" secondItem="J6N-NV-YBy" secondAttribute="trailing" constant="48" id="MQX-Gf-39N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Sa-2c-ILx" secondAttribute="trailing" constant="70" id="P34-4m-F5G"/>
+                            <constraint firstItem="Lea-r6-Ang" firstAttribute="trailing" secondItem="5Sa-2c-ILx" secondAttribute="trailing" id="QR5-kb-9SO"/>
+                            <constraint firstItem="YUm-OZ-Ehu" firstAttribute="trailing" secondItem="J6N-NV-YBy" secondAttribute="trailing" id="atd-Sb-85C"/>
+                            <constraint firstItem="YUm-OZ-Ehu" firstAttribute="centerY" secondItem="Lea-r6-Ang" secondAttribute="centerY" id="jGV-vh-GeD"/>
+                            <constraint firstItem="5Sa-2c-ILx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="u3r-tJ-1ff"/>
+                            <constraint firstItem="5Sa-2c-ILx" firstAttribute="centerY" secondItem="J6N-NV-YBy" secondAttribute="centerY" id="yKc-EL-gy8"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="J6N-NV-YBy"/>
+                                <exclude reference="5Sa-2c-ILx"/>
+                                <exclude reference="Lea-r6-Ang"/>
+                                <exclude reference="YUm-OZ-Ehu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MQX-Gf-39N"/>
+                                <exclude reference="P34-4m-F5G"/>
+                                <exclude reference="u3r-tJ-1ff"/>
+                                <exclude reference="yKc-EL-gy8"/>
+                                <exclude reference="4sv-ds-YNE"/>
+                                <exclude reference="HHG-f3-ORW"/>
+                                <exclude reference="QR5-kb-9SO"/>
+                                <exclude reference="atd-Sb-85C"/>
+                                <exclude reference="jGV-vh-GeD"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="J6N-NV-YBy"/>
+                                <include reference="5Sa-2c-ILx"/>
+                                <include reference="Lea-r6-Ang"/>
+                                <include reference="YUm-OZ-Ehu"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MQX-Gf-39N"/>
+                                <include reference="P34-4m-F5G"/>
+                                <include reference="u3r-tJ-1ff"/>
+                                <include reference="yKc-EL-gy8"/>
+                                <include reference="4sv-ds-YNE"/>
+                                <include reference="HHG-f3-ORW"/>
+                                <include reference="QR5-kb-9SO"/>
+                                <include reference="atd-Sb-85C"/>
+                                <include reference="jGV-vh-GeD"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="endInput" destination="Lea-r6-Ang" id="DLm-VL-9vV"/>
+                        <outlet property="startInput" destination="5Sa-2c-ILx" id="NXD-jF-RJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -12,7 +12,13 @@
 import Foundation
 
 class PathfinderModel{
-    
+    var map:Graph
+    init(edges:[Edge]){
+        map=Graph(edges: edges)
+    }
+    func findShortestPath(start:String,end:String){
+        map.findShortestPath(start,end: end)
+    }
 }
 
 class Edge{
@@ -29,7 +35,6 @@ class Edge{
 class Vertex:Hashable,Comparable{
     var name:String
     var dist=Int.max
-    var previous:Vertex?
     var neighbors=[Vertex: Int]()
     init(name:String){
         self.name=name
@@ -49,9 +54,12 @@ class Graph{
         //get all vertices in graph
         for e:Edge in edges{
             if let _=graph[e.v1]{
+                
+            } else {
                 graph[e.v1]=Vertex(name: e.v1)
             }
             if let _=graph[e.v2]{
+            } else {
                 graph[e.v2]=Vertex(name: e.v2)
             }
         }
@@ -65,15 +73,19 @@ class Graph{
     
     //find shortest path with Dijkstra's algorithm
     func findShortestPath(start:String,end:String){
-        let source=Vertex(name: start)
+        let source=graph[start]
         var cameFrom=[Vertex: Vertex]()
         //var costTo=[Vertex: Int]()
-        let frontier=PriorityQueue<Vertex>(headVal: source, headPri: 0)
-        source.dist=0
+        cameFrom[source!]=source!
+        let frontier=OtherPriorityQueue<Vertex>()
+        frontier.push(0, item: source!)
+        source!.dist=0
         
-        var current:Vertex
+        var current:Vertex=source!
         while !frontier.isEmpty(){
-            current=frontier.poll()
+            current=frontier.pop().1
+            //print("Main loop:"+current.name)
+            //print(end)
             if(current.name==end){
                 break
             }
@@ -82,25 +94,46 @@ class Graph{
             //search a
             for v:Vertex in neighbors.keys{
                 let dist=current.dist+neighbors[v]!  //distance to current + distance from current to neighbor=total dist to neighbor
-                if let _=cameFrom[v]{
+                if let _=cameFrom[v]{   //v has already been found
                     //I don't know how to search a dictionary
-                    if v.dist<dist{  //better path
+                    if v.dist>dist{  //better path
                         v.dist=dist
                         cameFrom[v]=current
-                        frontier.add(v, pri: dist)
+                        frontier.push(dist, item: v)
                     }
                 } else {
                     v.dist=dist
                     cameFrom[v]=current
-                    frontier.add(v, pri: dist)
+                    frontier.push(dist, item: v)
                 }
             }
         }
+        printPath(cameFrom,end: graph[end]!)
     }
 }
 
 func printPath(cameFrom:[Vertex: Vertex],end:Vertex){
-    
+    var current=end
+    var keepGoing=true
+    /*
+    print("\n")
+    for v:Vertex in cameFrom.keys{
+        print("\(v.name) \(cameFrom[v]!.name)")
+    }
+    print("\n")
+    */
+    while keepGoing{
+        print(current.name)
+        if let tmp=cameFrom[current]{
+            if(current != tmp){ //source came from itself, and we don't want an infinite loop
+                current=tmp
+            } else {
+                keepGoing=false //stop if we hit the source, since it is the only vertex that can come from itself
+            }
+        } else {    //stop if current didn't come from anything (shouldn't have to ever run)
+            keepGoing=false
+        }
+    }
 }
 
 //protocol-required operators for Vertex
