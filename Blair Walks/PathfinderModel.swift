@@ -10,14 +10,15 @@
 //
 
 import Foundation
+import UIKit
 
 class PathfinderModel{
     var map:Graph
     init(edges:[Edge]){
         map=Graph(edges: edges)
     }
-    func findShortestPath(start:String,end:String){
-        map.findShortestPath(start,end: end)
+    func findShortestPath(start:String,end:String,output:UITextView!){
+        map.findShortestPath(start,end: end,output:output)
     }
 }
 
@@ -72,7 +73,7 @@ class Graph{
     }
     
     //find shortest path with Dijkstra's algorithm
-    func findShortestPath(start:String,end:String){
+    func findShortestPath(start:String,end:String,output:UITextView!)->[Vertex: Vertex]{
         let source=graph[start]
         var cameFrom=[Vertex: Vertex]()
         //var costTo=[Vertex: Int]()
@@ -108,11 +109,12 @@ class Graph{
                 }
             }
         }
-        printPath(cameFrom,end: graph[end]!)
+        printPath(cameFrom,end: graph[end]!,output: output)
+        return cameFrom
     }
 }
 
-func printPath(cameFrom:[Vertex: Vertex],end:Vertex){
+func printPath(cameFrom:[Vertex: Vertex],end:Vertex,output:UITextView!){
     var current=end
     var keepGoing=true
     /*
@@ -122,8 +124,9 @@ func printPath(cameFrom:[Vertex: Vertex],end:Vertex){
     }
     print("\n")
     */
+    var path=""
     while keepGoing{
-        print(current.name)
+        path+=current.name+"\n"
         if let tmp=cameFrom[current]{
             if(current != tmp){ //source came from itself, and we don't want an infinite loop
                 current=tmp
@@ -134,6 +137,11 @@ func printPath(cameFrom:[Vertex: Vertex],end:Vertex){
             keepGoing=false
         }
     }
+    output.text=path
+}
+
+func drawLine(from:CGPoint,to:CGPoint){
+    
 }
 
 //protocol-required operators for Vertex

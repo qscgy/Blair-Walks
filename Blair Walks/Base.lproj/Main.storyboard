@@ -54,6 +54,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOk-zl-FRe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Get Route"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="166" y="161" width="69" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="findPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOA-hS-6l9"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UWp-fL-nxY">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="270" width="240" height="128"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -74,6 +92,8 @@
                                 <exclude reference="5Sa-2c-ILx"/>
                                 <exclude reference="Lea-r6-Ang"/>
                                 <exclude reference="YUm-OZ-Ehu"/>
+                                <exclude reference="cOk-zl-FRe"/>
+                                <exclude reference="UWp-fL-nxY"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="MQX-Gf-39N"/>
@@ -93,6 +113,8 @@
                                 <include reference="5Sa-2c-ILx"/>
                                 <include reference="Lea-r6-Ang"/>
                                 <include reference="YUm-OZ-Ehu"/>
+                                <include reference="cOk-zl-FRe"/>
+                                <include reference="UWp-fL-nxY"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="MQX-Gf-39N"/>
@@ -106,15 +128,62 @@
                                 <include reference="jGV-vh-GeD"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NvI-WH-0Ek" appends="YES" id="cHh-78-pz7"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="endInput" destination="Lea-r6-Ang" id="DLm-VL-9vV"/>
+                        <outlet property="routeOutput" destination="UWp-fL-nxY" id="dch-7y-KoO"/>
                         <outlet property="startInput" destination="5Sa-2c-ILx" id="NXD-jF-RJe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NvI-WH-0Ek">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="cLX-4n-CjA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="586" y="388"/>
+        </scene>
+        <!--Route View Controller-->
+        <scene sceneID="Zno-7M-KXM">
+            <objects>
+                <viewController id="1s4-Bg-Xt4" customClass="RouteViewController" customModule="Blair_Walks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zom-j2-mji"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ghm-HY-Itf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CUA-FO-ZVI">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-Hv-Or0">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="236" width="240" height="128"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pqw-Hv-Or0"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pqw-Hv-Or0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="route" destination="pqw-Hv-Or0" id="IaZ-ny-e7T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mLk-gX-wLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1296" y="388"/>
         </scene>
     </scenes>
 </document>

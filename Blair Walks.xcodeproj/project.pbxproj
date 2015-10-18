@@ -17,6 +17,8 @@
 		220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B01BB4C81300783070 /* PathfinderModel.swift */; settings = {ASSET_TAGS = (); }; };
 		220496B31BB4D7DD00783070 /* PQNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B21BB4D7DD00783070 /* PQNode.swift */; settings = {ASSET_TAGS = (); }; };
 		22D3F5DF1BC32DFB00340C8C /* OtherPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */; settings = {ASSET_TAGS = (); }; };
+		22F706791BD324D400A7EE13 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F706781BD324D400A7EE13 /* Line.swift */; settings = {ASSET_TAGS = (); }; };
+		22F7067B1BD32A9800A7EE13 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		220496B01BB4C81300783070 /* PathfinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfinderModel.swift; sourceTree = "<group>"; };
 		220496B21BB4D7DD00783070 /* PQNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQNode.swift; sourceTree = "<group>"; };
 		22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPriorityQueue.swift; sourceTree = "<group>"; };
+		22F706781BD324D400A7EE13 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +113,11 @@
 				220496B01BB4C81300783070 /* PathfinderModel.swift */,
 				22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */,
 				220496861BB4C6D000783070 /* Main.storyboard */,
+				22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */,
 				220496891BB4C6D000783070 /* Assets.xcassets */,
 				2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */,
 				2204968E1BB4C6D100783070 /* Info.plist */,
+				22F706781BD324D400A7EE13 /* Line.swift */,
 			);
 			path = "Blair Walks";
 			sourceTree = "<group>";
@@ -267,8 +273,10 @@
 				22D3F5DF1BC32DFB00340C8C /* OtherPriorityQueue.swift in Sources */,
 				220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */,
 				220496851BB4C6D000783070 /* ViewController.swift in Sources */,
+				22F706791BD324D400A7EE13 /* Line.swift in Sources */,
 				220496B31BB4D7DD00783070 /* PQNode.swift in Sources */,
 				220496831BB4C6CF00783070 /* AppDelegate.swift in Sources */,
+				22F7067B1BD32A9800A7EE13 /* RouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

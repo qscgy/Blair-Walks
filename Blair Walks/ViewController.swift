@@ -12,7 +12,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var startInput: UITextField!
     @IBOutlet var endInput: UITextField!
+    @IBOutlet var routeOutput: UITextView!
     var pathfinder:PathfinderModel=PathfinderModel(edges: [Edge(v1: "A", v2: "B", dist: 1)])
+    var path:[Vertex: Vertex]=[Vertex(name: ""): Vertex(name: "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +26,27 @@ class ViewController: UIViewController,UITextFieldDelegate {
         startInput.delegate=self
         endInput.delegate=self
         
-        pathfinder.findShortestPath("A", end: "E")
+        //pathfinder.findShortestPath("A", end: "E")
         //print("Done")
     }
 
+    @IBAction func findPath(sender: AnyObject) {
+        let start=startInput.text!
+        let end=endInput.text!
+        pathfinder.findShortestPath(start, end: end, output: routeOutput)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func viewTapped(sender: AnyObject) {
+        if startInput.isFirstResponder(){
+            startInput.resignFirstResponder()
+        } else if endInput.isFirstResponder(){
+            endInput.resignFirstResponder()
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
