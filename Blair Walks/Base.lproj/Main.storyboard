@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mf1-VD-kJP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
@@ -57,19 +57,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOk-zl-FRe">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Get Route"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="166" y="161" width="69" height="30"/>
-                                </variation>
                                 <connections>
                                     <action selector="findPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WOA-hS-6l9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qS2-lB-dkH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="1s4-Bg-Xt4" kind="show" identifier="showMap" id="7ya-vj-j1f"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UWp-fL-nxY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="80" y="270" width="240" height="128"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="80" y="313" width="240" height="128"/>
                                 </variation>
                             </textView>
                         </subviews>
@@ -79,11 +83,19 @@
                             <constraint firstItem="Lea-r6-Ang" firstAttribute="top" secondItem="5Sa-2c-ILx" secondAttribute="bottom" constant="32" id="4sv-ds-YNE"/>
                             <constraint firstItem="Lea-r6-Ang" firstAttribute="leading" secondItem="5Sa-2c-ILx" secondAttribute="leading" id="HHG-f3-ORW"/>
                             <constraint firstItem="5Sa-2c-ILx" firstAttribute="leading" secondItem="J6N-NV-YBy" secondAttribute="trailing" constant="48" id="MQX-Gf-39N"/>
+                            <constraint firstItem="qS2-lB-dkH" firstAttribute="top" secondItem="cOk-zl-FRe" secondAttribute="bottom" constant="2" id="OXw-ux-d5p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Sa-2c-ILx" secondAttribute="trailing" constant="70" id="P34-4m-F5G"/>
                             <constraint firstItem="Lea-r6-Ang" firstAttribute="trailing" secondItem="5Sa-2c-ILx" secondAttribute="trailing" id="QR5-kb-9SO"/>
+                            <constraint firstItem="cOk-zl-FRe" firstAttribute="top" secondItem="Lea-r6-Ang" secondAttribute="bottom" constant="56" id="RnI-uy-ph9"/>
+                            <constraint firstItem="UWp-fL-nxY" firstAttribute="top" secondItem="qS2-lB-dkH" secondAttribute="bottom" constant="8" symbolic="YES" id="SfF-Yf-YW7"/>
                             <constraint firstItem="YUm-OZ-Ehu" firstAttribute="trailing" secondItem="J6N-NV-YBy" secondAttribute="trailing" id="atd-Sb-85C"/>
+                            <constraint firstItem="qS2-lB-dkH" firstAttribute="centerX" secondItem="UWp-fL-nxY" secondAttribute="centerX" id="iOM-sE-UMe"/>
                             <constraint firstItem="YUm-OZ-Ehu" firstAttribute="centerY" secondItem="Lea-r6-Ang" secondAttribute="centerY" id="jGV-vh-GeD"/>
-                            <constraint firstItem="5Sa-2c-ILx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="u3r-tJ-1ff"/>
+                            <constraint firstItem="cOk-zl-FRe" firstAttribute="centerX" secondItem="UWp-fL-nxY" secondAttribute="centerX" id="qMl-HY-e5I"/>
+                            <constraint firstItem="cOk-zl-FRe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sbd-ho-Etb"/>
+                            <constraint firstItem="5Sa-2c-ILx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="u3r-tJ-1ff">
+                                <variation key="widthClass=compact" constant="31"/>
+                            </constraint>
                             <constraint firstItem="5Sa-2c-ILx" firstAttribute="centerY" secondItem="J6N-NV-YBy" secondAttribute="centerY" id="yKc-EL-gy8"/>
                         </constraints>
                         <variation key="default">
@@ -93,9 +105,12 @@
                                 <exclude reference="Lea-r6-Ang"/>
                                 <exclude reference="YUm-OZ-Ehu"/>
                                 <exclude reference="cOk-zl-FRe"/>
+                                <exclude reference="qS2-lB-dkH"/>
                                 <exclude reference="UWp-fL-nxY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="atd-Sb-85C"/>
+                                <exclude reference="jGV-vh-GeD"/>
                                 <exclude reference="MQX-Gf-39N"/>
                                 <exclude reference="P34-4m-F5G"/>
                                 <exclude reference="u3r-tJ-1ff"/>
@@ -103,8 +118,12 @@
                                 <exclude reference="4sv-ds-YNE"/>
                                 <exclude reference="HHG-f3-ORW"/>
                                 <exclude reference="QR5-kb-9SO"/>
-                                <exclude reference="atd-Sb-85C"/>
-                                <exclude reference="jGV-vh-GeD"/>
+                                <exclude reference="RnI-uy-ph9"/>
+                                <exclude reference="qMl-HY-e5I"/>
+                                <exclude reference="sbd-ho-Etb"/>
+                                <exclude reference="SfF-Yf-YW7"/>
+                                <exclude reference="OXw-ux-d5p"/>
+                                <exclude reference="iOM-sE-UMe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -114,9 +133,12 @@
                                 <include reference="Lea-r6-Ang"/>
                                 <include reference="YUm-OZ-Ehu"/>
                                 <include reference="cOk-zl-FRe"/>
+                                <include reference="qS2-lB-dkH"/>
                                 <include reference="UWp-fL-nxY"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="atd-Sb-85C"/>
+                                <include reference="jGV-vh-GeD"/>
                                 <include reference="MQX-Gf-39N"/>
                                 <include reference="P34-4m-F5G"/>
                                 <include reference="u3r-tJ-1ff"/>
@@ -124,14 +146,19 @@
                                 <include reference="4sv-ds-YNE"/>
                                 <include reference="HHG-f3-ORW"/>
                                 <include reference="QR5-kb-9SO"/>
-                                <include reference="atd-Sb-85C"/>
-                                <include reference="jGV-vh-GeD"/>
+                                <include reference="RnI-uy-ph9"/>
+                                <include reference="qMl-HY-e5I"/>
+                                <include reference="sbd-ho-Etb"/>
+                                <include reference="SfF-Yf-YW7"/>
+                                <include reference="OXw-ux-d5p"/>
+                                <include reference="iOM-sE-UMe"/>
                             </mask>
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="NvI-WH-0Ek" appends="YES" id="cHh-78-pz7"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="fWc-qf-taS"/>
                     <connections>
                         <outlet property="endInput" destination="Lea-r6-Ang" id="DLm-VL-9vV"/>
                         <outlet property="routeOutput" destination="UWp-fL-nxY" id="dch-7y-KoO"/>
@@ -145,7 +172,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="586" y="388"/>
+            <point key="canvasLocation" x="1503" y="388"/>
         </scene>
         <!--Route View Controller-->
         <scene sceneID="Zno-7M-KXM">
@@ -156,6 +183,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ghm-HY-Itf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CUA-FO-ZVI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pqw-Hv-Or0">
@@ -183,7 +211,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLk-gX-wLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="388"/>
+            <point key="canvasLocation" x="2214" y="388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D3Y-MQ-B3i">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mf1-VD-kJP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ctL-jb-CZy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="RgS-PN-1zd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="id0-77-D4g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="585" y="388"/>
         </scene>
     </scenes>
 </document>

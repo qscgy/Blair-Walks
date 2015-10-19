@@ -10,6 +10,7 @@ import UIKit
 
 class RouteViewController: UIViewController {
     @IBOutlet var route: UIImageView!
+    var path:[Vertex: Vertex]=[Vertex(name: ""): Vertex(name: "")]
     override func viewDidLoad() {
         super.viewDidLoad()
         //set route to fill screen

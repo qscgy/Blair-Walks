@@ -54,7 +54,5 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //print("resigning")
         return true
     }
-
-
 }
 

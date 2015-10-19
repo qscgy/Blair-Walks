@@ -144,6 +144,10 @@ func drawLine(from:CGPoint,to:CGPoint){
     
 }
 
+func initEdgesFromFile(file:String)->[Edge]{
+    
+}
+
 //protocol-required operators for Vertex
 func ==(left: Vertex, right: Vertex) -> Bool {
     return left.hashValue == right.hashValue
