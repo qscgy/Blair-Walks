@@ -19,10 +19,14 @@ class ViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        /*
         pathfinder=PathfinderModel(edges: [Edge(v1: "A", v2: "B", dist: 1),Edge(v1: "B", v2: "C", dist: 3),
             Edge(v1: "A", v2: "C", dist: 3),Edge(v1: "C", v2: "D", dist: 2),Edge(v1: "B", v2: "E", dist: 2),
             Edge(v1: "C", v2: "E", dist: 2),Edge(v1: "D", v2: "E", dist: 3),Edge(v1: "A", v2: "D", dist: 3)])
+        */
         
+        pathfinder=PathfinderModel(file: "ROUTE_DATA")
+        routeOutput.text=""
         startInput.delegate=self
         endInput.delegate=self
         
@@ -34,6 +38,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         let start=startInput.text!
         let end=endInput.text!
         pathfinder.findShortestPath(start, end: end, output: routeOutput)
+        print("done")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

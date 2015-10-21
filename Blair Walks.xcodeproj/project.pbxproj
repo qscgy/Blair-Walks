@@ -16,6 +16,8 @@
 		220496A31BB4C6D100783070 /* Blair_WalksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496A21BB4C6D100783070 /* Blair_WalksUITests.swift */; };
 		220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B01BB4C81300783070 /* PathfinderModel.swift */; settings = {ASSET_TAGS = (); }; };
 		220496B31BB4D7DD00783070 /* PQNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B21BB4D7DD00783070 /* PQNode.swift */; settings = {ASSET_TAGS = (); }; };
+		22A12D521BD6FD6A0046713E /* COPYRIGHTS.txt in Resources */ = {isa = PBXBuildFile; fileRef = 22A12D511BD6FD6A0046713E /* COPYRIGHTS.txt */; settings = {ASSET_TAGS = (); }; };
+		22A12D571BD707340046713E /* ROUTE_DATA.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22A12D561BD707340046713E /* ROUTE_DATA.csv */; settings = {ASSET_TAGS = (); }; };
 		22D3F5DF1BC32DFB00340C8C /* OtherPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */; settings = {ASSET_TAGS = (); }; };
 		22F706791BD324D400A7EE13 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F706781BD324D400A7EE13 /* Line.swift */; settings = {ASSET_TAGS = (); }; };
 		22F7067B1BD32A9800A7EE13 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -54,6 +56,8 @@
 		220496A41BB4C6D100783070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		220496B01BB4C81300783070 /* PathfinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfinderModel.swift; sourceTree = "<group>"; };
 		220496B21BB4D7DD00783070 /* PQNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQNode.swift; sourceTree = "<group>"; };
+		22A12D511BD6FD6A0046713E /* COPYRIGHTS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYRIGHTS.txt; sourceTree = "<group>"; };
+		22A12D561BD707340046713E /* ROUTE_DATA.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ROUTE_DATA.csv; sourceTree = "<group>"; };
 		22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPriorityQueue.swift; sourceTree = "<group>"; };
 		22F706781BD324D400A7EE13 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
@@ -112,12 +116,14 @@
 				220496B21BB4D7DD00783070 /* PQNode.swift */,
 				220496B01BB4C81300783070 /* PathfinderModel.swift */,
 				22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */,
+				22A12D511BD6FD6A0046713E /* COPYRIGHTS.txt */,
 				220496861BB4C6D000783070 /* Main.storyboard */,
 				22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */,
 				220496891BB4C6D000783070 /* Assets.xcassets */,
 				2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */,
 				2204968E1BB4C6D100783070 /* Info.plist */,
 				22F706781BD324D400A7EE13 /* Line.swift */,
+				22A12D561BD707340046713E /* ROUTE_DATA.csv */,
 			);
 			path = "Blair Walks";
 			sourceTree = "<group>";
@@ -244,9 +250,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A12D521BD6FD6A0046713E /* COPYRIGHTS.txt in Resources */,
 				2204968D1BB4C6D100783070 /* LaunchScreen.storyboard in Resources */,
 				2204968A1BB4C6D000783070 /* Assets.xcassets in Resources */,
 				220496881BB4C6D000783070 /* Main.storyboard in Resources */,
+				22A12D571BD707340046713E /* ROUTE_DATA.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,7 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-Walks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Blair Walks/Blair Walks-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -440,7 +448,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "spc.Blair-Walks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Blair Walks/Blair Walks-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

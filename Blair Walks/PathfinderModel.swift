@@ -10,6 +10,7 @@
 //
 
 import Foundation
+import Darwin
 import UIKit
 
 class PathfinderModel{
@@ -17,8 +18,19 @@ class PathfinderModel{
     init(edges:[Edge]){
         map=Graph(edges: edges)
     }
+    init(file:String){
+        map=Graph(edges: initEdgesFromFile(file))
+    }
     func findShortestPath(start:String,end:String,output:UITextView!){
-        map.findShortestPath(start,end: end,output:output)
+        if let _=map.graph[start]{
+            if let _=map.graph[end]{//both are valid vertices
+                map.findShortestPath(start,end: end,output:output)
+            } else {
+                output.text="Invalid room numbers."
+            }
+        } else {
+            output.text="Invalid room numbers."
+        }
     }
 }
 
@@ -96,7 +108,6 @@ class Graph{
             for v:Vertex in neighbors.keys{
                 let dist=current.dist+neighbors[v]!  //distance to current + distance from current to neighbor=total dist to neighbor
                 if let _=cameFrom[v]{   //v has already been found
-                    //I don't know how to search a dictionary
                     if v.dist>dist{  //better path
                         v.dist=dist
                         cameFrom[v]=current
@@ -124,9 +135,9 @@ func printPath(cameFrom:[Vertex: Vertex],end:Vertex,output:UITextView!){
     }
     print("\n")
     */
-    var path=""
+    var path:[String]=[]
     while keepGoing{
-        path+=current.name+"\n"
+        path.append(current.name)
         if let tmp=cameFrom[current]{
             if(current != tmp){ //source came from itself, and we don't want an infinite loop
                 current=tmp
@@ -137,7 +148,13 @@ func printPath(cameFrom:[Vertex: Vertex],end:Vertex,output:UITextView!){
             keepGoing=false
         }
     }
-    output.text=path
+    path=path.reverse()
+    print(path)
+    var pathStr=""
+    for str in path{
+        pathStr+=str+"\n"
+    }
+    output.text=pathStr
 }
 
 func drawLine(from:CGPoint,to:CGPoint){
@@ -145,7 +162,33 @@ func drawLine(from:CGPoint,to:CGPoint){
 }
 
 func initEdgesFromFile(file:String)->[Edge]{
+    let path=NSBundle.mainBundle().pathForResource(file, ofType: "csv")
+    let url=NSURL(fileURLWithPath: path!)
+    //print(url)
+    let data=NSData(contentsOfURL: url)
+    //print(data)
+    var inputStream:NSInputStream=NSInputStream(data: data!)
+    let bufferSize=1500
+    var buffer=Array<UInt8>(count: bufferSize, repeatedValue: 0)
     
+    inputStream.open()
+    
+    var bytesRead=inputStream.read(&buffer, maxLength: bufferSize)
+    var contents=NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
+    var a:String=contents! as String
+    var contentsArray=a.componentsSeparatedByString("\n")
+    //print(contentsArray)
+    inputStream.close()
+    
+    var edges:[Edge]=[]
+    for var str:String in contentsArray{
+        //print(str)
+        let edgeData=str.componentsSeparatedByString(",")
+        //print(edgeData)
+        edges.append(Edge(v1: edgeData[0], v2: edgeData[1], dist:Int(edgeData[2])!))
+    }
+    //print(edges)
+    return edges
 }
 
 //protocol-required operators for Vertex
