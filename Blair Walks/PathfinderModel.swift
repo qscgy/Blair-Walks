@@ -13,6 +13,7 @@ import Foundation
 import Darwin
 import UIKit
 
+//Model for pathfinding algorithms
 class PathfinderModel{
     var map:Graph
     init(edges:[Edge]){
@@ -23,7 +24,7 @@ class PathfinderModel{
     }
     func findShortestPath(start:String,end:String,output:UITextView!){
         if let _=map.graph[start]{
-            if let _=map.graph[end]{//both are valid vertices
+            if let _=map.graph[end]{ //make sure both are valid vertices
                 map.findShortestPath(start,end: end,output:output)
             } else {
                 output.text="Invalid room numbers."
@@ -45,6 +46,7 @@ class Edge{
     }
 }
 
+//only used by Graph class
 class Vertex:Hashable,Comparable{
     var name:String
     var dist=Int.max
@@ -104,9 +106,9 @@ class Graph{
             }
             var neighbors=current.neighbors
             
-            //search a
+            //search neighbors for unvisited vertices or better paths
             for v:Vertex in neighbors.keys{
-                let dist=current.dist+neighbors[v]!  //distance to current + distance from current to neighbor=total dist to neighbor
+                let dist=current.dist+neighbors[v]!  //distance to current+distance from current to neighbor=total dist to neighbor
                 if let _=cameFrom[v]{   //v has already been found
                     if v.dist>dist{  //better path
                         v.dist=dist
@@ -163,6 +165,9 @@ func drawLine(from:CGPoint,to:CGPoint){
 
 func initEdgesFromFile(file:String)->[Edge]{
     let path=NSBundle.mainBundle().pathForResource(file, ofType: "csv")
+    /*
+    //might be a buffered reading system, or just have a size cap (not my algorithm)
+    
     let url=NSURL(fileURLWithPath: path!)
     //print(url)
     let data=NSData(contentsOfURL: url)
@@ -179,9 +184,22 @@ func initEdgesFromFile(file:String)->[Edge]{
     var contentsArray=a.componentsSeparatedByString("\n")
     //print(contentsArray)
     inputStream.close()
+    */
     
+    let fileStr:String
+    
+    //set fileStr to be the contents of file
+    do{
+        try fileStr=String(contentsOfFile: path!)
+    }
+    catch _{
+        fileStr=""
+    }
+    let contentsArray=fileStr.componentsSeparatedByString("\n") //split line by line
     var edges:[Edge]=[]
-    for var str:String in contentsArray{
+    
+    //create an edge from each line
+    for str:String in contentsArray{
         //print(str)
         let edgeData=str.componentsSeparatedByString(",")
         //print(edgeData)
