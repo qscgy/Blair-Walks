@@ -13,6 +13,10 @@ import Foundation
 import Darwin
 import UIKit
 
+struct Constants {
+    static let INVALID="Invalid room numbers."
+}
+
 //Model for pathfinding algorithms
 class PathfinderModel{
     var map:Graph
@@ -22,15 +26,15 @@ class PathfinderModel{
     init(file:String){
         map=Graph(edges: initEdgesFromFile(file))
     }
-    func findShortestPath(start:String,end:String,output:UITextView!){
+    func findShortestPath(start:String,end:String)->String{
         if let _=map.graph[start]{
             if let _=map.graph[end]{ //make sure both are valid vertices
-                map.findShortestPath(start,end: end,output:output)
+                return map.findShortestPath(start,end: end)
             } else {
-                output.text="Invalid room numbers."
+                return Constants.INVALID
             }
         } else {
-            output.text="Invalid room numbers."
+            return Constants.INVALID
         }
     }
 }
@@ -87,7 +91,7 @@ class Graph{
     }
     
     //find shortest path with Dijkstra's algorithm
-    func findShortestPath(start:String,end:String,output:UITextView!)->[Vertex: Vertex]{
+    func findShortestPath(start:String,end:String)->String{
         let source=graph[start]
         var cameFrom=[Vertex: Vertex]()
         //var costTo=[Vertex: Int]()
@@ -122,12 +126,11 @@ class Graph{
                 }
             }
         }
-        printPath(cameFrom,end: graph[end]!,output: output)
-        return cameFrom
+         return pathToString(cameFrom,end: graph[end]!)
     }
 }
 
-func printPath(cameFrom:[Vertex: Vertex],end:Vertex,output:UITextView!){
+func pathToString(cameFrom:[Vertex: Vertex],end:Vertex)->String{
     var current=end
     var keepGoing=true
     /*
@@ -156,7 +159,7 @@ func printPath(cameFrom:[Vertex: Vertex],end:Vertex,output:UITextView!){
     for str in path{
         pathStr+=str+"\n"
     }
-    output.text=pathStr
+    return pathStr
 }
 
 func drawLine(from:CGPoint,to:CGPoint){

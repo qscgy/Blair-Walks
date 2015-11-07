@@ -13,6 +13,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var startInput: UITextField!
     @IBOutlet var endInput: UITextField!
     @IBOutlet var routeOutput: UITextView!
+    var pathStr:String!
     var pathfinder:PathfinderModel=PathfinderModel(edges: [Edge(v1: "A", v2: "B", dist: 1)])
     var path:[Vertex: Vertex]=[Vertex(name: ""): Vertex(name: "")]
     
@@ -37,8 +38,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBAction func findPath(sender: AnyObject) {
         let start=startInput.text!
         let end=endInput.text!
-        pathfinder.findShortestPath(start, end: end, output: routeOutput)
-        print("done")
+        pathStr=pathfinder.findShortestPath(start, end: end)
+        routeOutput.text=pathStr
+        //print("done")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,6 +53,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
             startInput.resignFirstResponder()
         } else if endInput.isFirstResponder(){
             endInput.resignFirstResponder()
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier=="showMap"){
+            let vc=segue.destinationViewController as! RouteViewController
+            vc.pathStr=pathStr
         }
     }
     
