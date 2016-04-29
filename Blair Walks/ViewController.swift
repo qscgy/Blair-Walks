@@ -14,19 +14,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var endInput: UITextField!
     @IBOutlet var routeOutput: UITextView!
     var pathStr:String!
-    var pathfinder:PathfinderModel=PathfinderModel(edges: [Edge(v1: "A", v2: "B", dist: 1)])
+    var pathfinder:PathfinderModel!
     var path:[Vertex: Vertex]=[Vertex(name: ""): Vertex(name: "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        /*
-        pathfinder=PathfinderModel(edges: [Edge(v1: "A", v2: "B", dist: 1),Edge(v1: "B", v2: "C", dist: 3),
-            Edge(v1: "A", v2: "C", dist: 3),Edge(v1: "C", v2: "D", dist: 2),Edge(v1: "B", v2: "E", dist: 2),
-            Edge(v1: "C", v2: "E", dist: 2),Edge(v1: "D", v2: "E", dist: 3),Edge(v1: "A", v2: "D", dist: 3)])
-        */
         
-        pathfinder=PathfinderModel(file: "ROUTE_DATA")
+        pathfinder=PathfinderModel(file: "JUNCTIONS_TEST",coords: "PIXEL_COORDS")
         routeOutput.text=""
         startInput.delegate=self
         endInput.delegate=self

@@ -17,13 +17,13 @@ struct Constants {
     static let INVALID="Invalid room numbers."
 }
 
+
 //Model for pathfinding algorithms
 class PathfinderModel{
-    var map:Graph
-    init(edges:[Edge]){
-        map=Graph(edges: edges)
-    }
-    init(file:String){
+    var map:Graph=Graph()
+    var coords:[String:(Int,Int)]=[String:(Int,Int)]()
+    init(file:String, coords:String){
+        self.coords=initCoordsFromFile(coords)
         map=Graph(edges: initEdgesFromFile(file))
     }
     func findShortestPath(start:String,end:String)->String{
@@ -37,13 +37,60 @@ class PathfinderModel{
             return Constants.INVALID
         }
     }
+    func initEdgesFromFile(file:String)->[Edge]{
+        let path=NSBundle.mainBundle().pathForResource(file, ofType: "csv")
+        /*
+        //might be a buffered reading system, or just have a size cap (not my algorithm)
+        
+        let url=NSURL(fileURLWithPath: path!)
+        //print(url)
+        let data=NSData(contentsOfURL: url)
+        //print(data)
+        var inputStream:NSInputStream=NSInputStream(data: data!)
+        let bufferSize=1500
+        var buffer=Array<UInt8>(count: bufferSize, repeatedValue: 0)
+        
+        inputStream.open()
+        
+        var bytesRead=inputStream.read(&buffer, maxLength: bufferSize)
+        var contents=NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
+        var a:String=contents! as String
+        var contentsArray=a.componentsSeparatedByString("\n")
+        //print(contentsArray)
+        inputStream.close()
+        */
+        
+        let fileStr:String
+        
+        //set fileStr to be the contents of file
+        do{
+            try fileStr=String(contentsOfFile: path!)
+        }
+        catch _{
+            fileStr=""
+        }
+        let contentsArray=fileStr.componentsSeparatedByString("\n") //split line by line
+        var edges:[Edge]=[]
+        
+        //create an edge from each line
+        for str:String in contentsArray{
+            //print(str)
+            print(str)
+            let edgeData=str.componentsSeparatedByString(",")
+            let distance=dist(coords[edgeData[0]]!, p2: coords[edgeData[1]]!)
+            //print(edgeData)
+            edges.append(Edge(v1: edgeData[0], v2: edgeData[1], dist:distance))
+        }
+        //print(edges)
+        return edges
+    }
 }
 
 class Edge{
     var v1:String
     var v2:String
-    var dist:Int
-    init(v1:String,v2:String,dist:Int){
+    var dist:Double
+    init(v1:String,v2:String,dist:Double){
         self.v1=v1
         self.v2=v2
         self.dist=dist
@@ -53,8 +100,8 @@ class Edge{
 //only used by Graph class
 class Vertex:Hashable,Comparable{
     var name:String
-    var dist=Int.max
-    var neighbors=[Vertex: Int]()
+    var dist=Double(Int.max)
+    var neighbors=[Vertex:Double]()
     init(name:String){
         self.name=name
     }
@@ -63,10 +110,14 @@ class Vertex:Hashable,Comparable{
             return name.hashValue
         }
     }
+    
 }
 
 class Graph{
     var graph:[String: Vertex]  //maps names to vertices
+    init(){
+        graph=[String:Vertex]()
+    }
     init(edges:[Edge]){
         graph=[String: Vertex]()
         
@@ -117,12 +168,12 @@ class Graph{
                     if v.dist>dist{  //better path
                         v.dist=dist
                         cameFrom[v]=current
-                        frontier.push(dist, item: v)
+                        frontier.push(Int(dist), item: v)
                     }
                 } else {
                     v.dist=dist
                     cameFrom[v]=current
-                    frontier.push(dist, item: v)
+                    frontier.push(Int(dist), item: v)
                 }
             }
         }
@@ -166,29 +217,9 @@ func drawLine(from:CGPoint,to:CGPoint){
     
 }
 
-func initEdgesFromFile(file:String)->[Edge]{
+
+func initCoordsFromFile(file:String)->[String:(Int,Int)]{
     let path=NSBundle.mainBundle().pathForResource(file, ofType: "csv")
-    /*
-    //might be a buffered reading system, or just have a size cap (not my algorithm)
-    
-    let url=NSURL(fileURLWithPath: path!)
-    //print(url)
-    let data=NSData(contentsOfURL: url)
-    //print(data)
-    var inputStream:NSInputStream=NSInputStream(data: data!)
-    let bufferSize=1500
-    var buffer=Array<UInt8>(count: bufferSize, repeatedValue: 0)
-    
-    inputStream.open()
-    
-    var bytesRead=inputStream.read(&buffer, maxLength: bufferSize)
-    var contents=NSString(bytes: &buffer, length: bytesRead, encoding: NSUTF8StringEncoding)
-    var a:String=contents! as String
-    var contentsArray=a.componentsSeparatedByString("\n")
-    //print(contentsArray)
-    inputStream.close()
-    */
-    
     let fileStr:String
     
     //set fileStr to be the contents of file
@@ -199,18 +230,20 @@ func initEdgesFromFile(file:String)->[Edge]{
         fileStr=""
     }
     let contentsArray=fileStr.componentsSeparatedByString("\n") //split line by line
-    var edges:[Edge]=[]
+    var coords:[String:(Int,Int)]=[String:(Int,Int)]()
     
     //create an edge from each line
     for str:String in contentsArray{
         //print(str)
-            print(str)
-            let edgeData=str.componentsSeparatedByString(",")
-            //print(edgeData)
-            edges.append(Edge(v1: edgeData[0], v2: edgeData[1], dist:Int(edgeData[2])!))
+        print(str)
+        let coordData=str.componentsSeparatedByString(",")
+        coords[coordData[0]]=((Int(coordData[1])!, Int(coordData[2])!))
     }
-    //print(edges)
-    return edges
+    return coords
+}
+
+func dist(p1:(Int,Int),p2:(Int,Int))->Double{
+    return sqrt(pow(Double(p2.0-p1.0), 2)+pow(Double(p2.1-p1.1), 2))
 }
 
 //protocol-required operators for Vertex
@@ -221,10 +254,6 @@ func ==(left: Vertex, right: Vertex) -> Bool {
 func <(l:Vertex,r:Vertex)->Bool{
     return l.dist<r.dist
 }
-
-
-
-
 
 
 
