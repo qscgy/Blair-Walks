@@ -60,6 +60,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         if(segue.identifier=="showMap"){
             let vc=segue.destinationViewController as! RouteViewController
             vc.pathStr=pathStr
+            vc.start=startInput!.text!
+            vc.end=endInput.text!
         }
     }
     

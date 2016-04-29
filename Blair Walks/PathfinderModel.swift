@@ -204,9 +204,10 @@ func initEdgesFromFile(file:String)->[Edge]{
     //create an edge from each line
     for str:String in contentsArray{
         //print(str)
-        let edgeData=str.componentsSeparatedByString(",")
-        //print(edgeData)
-        edges.append(Edge(v1: edgeData[0], v2: edgeData[1], dist:Int(edgeData[2])!))
+            print(str)
+            let edgeData=str.componentsSeparatedByString(",")
+            //print(edgeData)
+            edges.append(Edge(v1: edgeData[0], v2: edgeData[1], dist:Int(edgeData[2])!))
     }
     //print(edges)
     return edges
