@@ -41,11 +41,14 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         //print(points)
         let startPt=points[start]
         //let endPt=points[end]
-        UIGraphicsBeginImageContext(route.frame.size)
+        
+        let size=CGSizeApplyAffineTransform(route.image!.size, CGAffineTransformMakeScale(0.1, 0.1))
+        
+        UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
         let context=UIGraphicsGetCurrentContext()
-        let xScale=view.bounds.width/10.0
-        let yScale=view.bounds.height/10.0
-        route.image?.drawInRect(CGRect(x: 0, y: 0, width: route.frame.width, height: route.frame.height))
+        let xScale:CGFloat=66.0
+        let yScale:CGFloat=45.32
+        route.image!.drawInRect(CGRect(origin: CGPointZero, size: size))
         //route.image?.drawAtPoint(CGPoint(x: 0, y: 0))
         
         CGContextMoveToPoint(context, startPt!.x*xScale, (10-startPt!.y)*yScale)
@@ -62,7 +65,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         route.image=UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        route.contentMode = .ScaleAspectFit
+        //route.contentMode = .ScaleAspectFit
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
