@@ -19,7 +19,7 @@ class PQNode<T>{
         return priority==Int.min
     }
 }
-
+/*
 class PriorityQueue<T>{
     var head:PQNode<T>
     init(headVal:T,headPri:Int){
@@ -65,3 +65,4 @@ class PriorityQueue<T>{
         return head.treatAsNil()
     }
 }
+*/

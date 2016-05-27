@@ -14,9 +14,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var endInput: UITextField!
     @IBOutlet var routeOutput: UITextView!
     var pathStr:String!
+    var path:[Vertex]!
     var pathfinder:PathfinderModel!
-    var path:[Vertex: Vertex]=[Vertex(name: ""): Vertex(name: "")]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,17 +24,14 @@ class ViewController: UIViewController,UITextFieldDelegate {
         routeOutput.text=""
         startInput.delegate=self
         endInput.delegate=self
-        
-        //pathfinder.findShortestPath("A", end: "E")
-        //print("Done")
     }
 
     @IBAction func findPath(sender: AnyObject) {
         let start=startInput.text!
         let end=endInput.text!
-        pathStr=pathfinder.findShortestPath(start, end: end)
+        path=pathfinder.findShortestPath(start, end: end)
+        pathStr=pathToString(path)
         routeOutput.text=pathStr
-        //print("done")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,9 +50,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier=="showMap"){
             let vc=segue.destinationViewController as! RouteViewController
-            vc.pathStr=pathStr
+            vc.path=path!  //pass path as string
             vc.start=startInput!.text!
             vc.end=endInput.text!
+            vc.points=convertCoords(pathfinder.coords)     //pass coordinate tuples as CGPoints from model to avoid having to parse the files again
         }
     }
     
@@ -64,5 +62,19 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //print("resigning")
         return true
     }
+    
+    //converts a dictionary mapping strings to tuples representing points to one mapping those strings to equivalent CGPoints
+    func convertCoords(coords:[String:(Int,Int)])->[String:CGPoint]{
+        var points:[String:CGPoint] = [String:CGPoint]()
+        for point in coords{
+            points[point.0]=CGPoint(x: point.1.0, y: point.1.1)  //new point with x and y coordinates
+        }
+        return points
+    }
+    
+    func convertPath(path:String)->[String]{
+        return path.componentsSeparatedByString("\n")
+    }
+
 }
 

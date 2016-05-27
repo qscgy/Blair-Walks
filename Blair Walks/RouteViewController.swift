@@ -8,54 +8,65 @@
 
 import UIKit
 
-class RouteViewController: UIViewController {
+class RouteViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet var route: UIImageView!
-    var coords=[String:CGPoint]()
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
     var start:String!
     var end:String!
-    var pathStr:String=""
+    var path:[Vertex]!
+    var points:[String:CGPoint]!    //every vertex, not just the ones that we're using
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.viewDidLayoutSubviews()
         //set route to fill screen
         let screenSize:CGRect=self.view.frame
         route.frame=screenSize
-        getCoordsFromFile("Coordinates")
+        route.image=UIImage(named: "FullMapRose.png")
+        
+        scrollView.minimumZoomScale=1.0
+        scrollView.maximumZoomScale=4.0
+        scrollView.delegate=self
+        
+        //print(scrollView.zoomScale)
+        
+        //print(route.image)
         drawPath()
     }
     
     func drawPath(){
-        let startPt=coords[start]
-        let endPt=coords[end]
+        //print(points)
+        let startPt=points[start]
+        //let endPt=points[end]
         UIGraphicsBeginImageContext(route.frame.size)
         let context=UIGraphicsGetCurrentContext()
-        CGContextMoveToPoint(context, startPt!.x, startPt!.y)
-        CGContextAddLineToPoint(context, endPt!.x, endPt!.y)
-        print(coords[end])
+        let xScale=view.bounds.width/10.0
+        let yScale=view.bounds.height/10.0
+        route.image?.drawInRect(CGRect(x: 0, y: 0, width: route.frame.width, height: route.frame.height))
+        //route.image?.drawAtPoint(CGPoint(x: 0, y: 0))
+        
+        CGContextMoveToPoint(context, startPt!.x*xScale, (10-startPt!.y)*yScale)
+        for v:Vertex in path!{
+            if v.name != start!{
+                CGContextAddLineToPoint(context, points[v.name]!.x*xScale, (10-points[v.name]!.y)*yScale)
+            }
+        }
+        
         CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, 2.0)
         CGContextStrokePath(context)
+        route.image=UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        route.contentMode = .ScaleAspectFit
     }
     
-    func getCoordsFromFile(file:String){
-        let path=NSBundle.mainBundle().pathForResource(file, ofType: "csv")
-        let fileStr:String
-        
-        //set fileStr to be the contents of file
-        do{
-            try fileStr=String(contentsOfFile: path!)
-        }
-        catch _{
-            fileStr=""
-        }
-        let contentsArray=fileStr.componentsSeparatedByString("\n") //split line by line
-        
-        //create an edge from each line
-        for str:String in contentsArray{
-            //print(str)
-            let data=str.componentsSeparatedByString(",")
-            //print(edgeData)
-            coords[data[0]]=CGPoint(x: Double(data[1])!, y: Double(data[2])!)
-        }
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        //print(scrollView.zoomScale)
+        return self.route
     }
 }

@@ -14,7 +14,7 @@ import Darwin
 import UIKit
 
 struct Constants {
-    static let INVALID="Invalid room numbers."
+    static let INVALID=[Vertex(name: "Invalid")]
 }
 
 
@@ -22,19 +22,21 @@ struct Constants {
 class PathfinderModel{
     var map:Graph=Graph()
     var coords:[String:(Int,Int)]=[String:(Int,Int)]()
+    var edges:[Edge]=[]
     init(file:String, coords:String){
         self.coords=initCoordsFromFile(coords)
-        map=Graph(edges: initEdgesFromFile(file))
+        self.edges=initEdgesFromFile(file)
+        map=Graph(edges: edges)
     }
-    func findShortestPath(start:String,end:String)->String{
+    func findShortestPath(start:String,end:String)->[Vertex]{
         if let _=map.graph[start]{
             if let _=map.graph[end]{ //make sure both are valid vertices
                 return map.findShortestPath(start,end: end)
             } else {
-                return Constants.INVALID
+                return []
             }
         } else {
-            return Constants.INVALID
+            return []
         }
     }
     func initEdgesFromFile(file:String)->[Edge]{
@@ -75,7 +77,7 @@ class PathfinderModel{
         //create an edge from each line
         for str:String in contentsArray{
             //print(str)
-            print(str)
+            //print(str)
             let edgeData=str.componentsSeparatedByString(",")
             let distance=dist(coords[edgeData[0]]!, p2: coords[edgeData[1]]!)
             //print(edgeData)
@@ -142,20 +144,17 @@ class Graph{
     }
     
     //find shortest path with Dijkstra's algorithm
-    func findShortestPath(start:String,end:String)->String{
+    func findShortestPath(start:String,end:String)->[Vertex]{
         let source=graph[start]
         var cameFrom=[Vertex: Vertex]()
-        //var costTo=[Vertex: Int]()
         cameFrom[source!]=source!
-        let frontier=OtherPriorityQueue<Vertex>()
-        frontier.push(0, item: source!)
+        var frontier=PriorityQueue<Vertex>(ascending: true)
+        frontier.push(source!)
         source!.dist=0
         
         var current:Vertex=source!
-        while !frontier.isEmpty(){
-            current=frontier.pop().1
-            //print("Main loop:"+current.name)
-            //print(end)
+        while !frontier.isEmpty{
+            current=frontier.pop()!
             if(current.name==end){
                 break
             }
@@ -165,50 +164,34 @@ class Graph{
             for v:Vertex in neighbors.keys{
                 let dist=current.dist+neighbors[v]!  //distance to current+distance from current to neighbor=total dist to neighbor
                 if let _=cameFrom[v]{   //v has already been found
-                    if v.dist>dist{  //better path
+                    if dist<v.dist{  //better path to v
                         v.dist=dist
                         cameFrom[v]=current
-                        frontier.push(Int(dist), item: v)
+                        frontier.push(v)
                     }
                 } else {
                     v.dist=dist
                     cameFrom[v]=current
-                    frontier.push(Int(dist), item: v)
+                    frontier.push(v)
                 }
             }
         }
-         return pathToString(cameFrom,end: graph[end]!)
+        
+        //go back through cameFrom to find the path
+        var path:[Vertex]=[current]
+        var last=cameFrom[current]
+        repeat {
+            path.append(last!)
+            last=cameFrom[last!]
+        } while last != source!
+        return path.reverse()
     }
 }
 
-func pathToString(cameFrom:[Vertex: Vertex],end:Vertex)->String{
-    var current=end
-    var keepGoing=true
-    /*
-    print("\n")
-    for v:Vertex in cameFrom.keys{
-        print("\(v.name) \(cameFrom[v]!.name)")
-    }
-    print("\n")
-    */
-    var path:[String]=[]
-    while keepGoing{
-        path.append(current.name)
-        if let tmp=cameFrom[current]{
-            if(current != tmp){ //source came from itself, and we don't want an infinite loop
-                current=tmp
-            } else {
-                keepGoing=false //stop if we hit the source, since it is the only vertex that can come from itself
-            }
-        } else {    //stop if current didn't come from anything (shouldn't have to ever run)
-            keepGoing=false
-        }
-    }
-    path=path.reverse()
-    print(path)
-    var pathStr=""
-    for str in path{
-        pathStr+=str+"\n"
+func pathToString(path:[Vertex])->String{
+    var pathStr:String=""
+    for v in path{
+        pathStr += v.name+"\n"
     }
     return pathStr
 }
@@ -235,7 +218,6 @@ func initCoordsFromFile(file:String)->[String:(Int,Int)]{
     //create an edge from each line
     for str:String in contentsArray{
         //print(str)
-        print(str)
         let coordData=str.componentsSeparatedByString(",")
         coords[coordData[0]]=((Int(coordData[1])!, Int(coordData[2])!))
     }
