@@ -23,6 +23,7 @@
 		22A4D1E11CD3EA6B00091FDF /* PIXEL_COORDS.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */; };
 		22CD39451BEE6C3B00698E7C /* Coordinates.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22CD39441BEE6C3B00698E7C /* Coordinates.csv */; };
 		22D3F5DF1BC32DFB00340C8C /* OtherPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */; };
+		22DEAA6B1CF93FD500954716 /* floor1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DEAA6A1CF93FD500954716 /* floor1.png */; };
 		22E579CD1CF7A10200114BDE /* FullMapRose.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579CC1CF7A10200114BDE /* FullMapRose.png */; };
 		22E579CF1CF7A10F00114BDE /* FullMapRose2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579CE1CF7A10F00114BDE /* FullMapRose2.png */; };
 		22E579D11CF7A11600114BDE /* FullMapRose3.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579D01CF7A11600114BDE /* FullMapRose3.png */; };
@@ -70,6 +71,7 @@
 		22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PIXEL_COORDS.csv; sourceTree = "<group>"; };
 		22CD39441BEE6C3B00698E7C /* Coordinates.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Coordinates.csv; sourceTree = "<group>"; };
 		22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPriorityQueue.swift; sourceTree = "<group>"; };
+		22DEAA6A1CF93FD500954716 /* floor1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor1.png; sourceTree = "<group>"; };
 		22E579CC1CF7A10200114BDE /* FullMapRose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FullMapRose.png; path = ../FullMapRose.png; sourceTree = "<group>"; };
 		22E579CE1CF7A10F00114BDE /* FullMapRose2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullMapRose2.png; sourceTree = "<group>"; };
 		22E579D01CF7A11600114BDE /* FullMapRose3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullMapRose3.png; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		22E579CB1CF7A0F800114BDE /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				22DEAA6A1CF93FD500954716 /* floor1.png */,
 				229F67941CF7E4970080643E /* 449-logo-270.png */,
 				22E579CC1CF7A10200114BDE /* FullMapRose.png */,
 				22E579CE1CF7A10F00114BDE /* FullMapRose2.png */,
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DEAA6B1CF93FD500954716 /* floor1.png in Resources */,
 				2204968D1BB4C6D100783070 /* LaunchScreen.storyboard in Resources */,
 				22E579CF1CF7A10F00114BDE /* FullMapRose2.png in Resources */,
 				2204968A1BB4C6D000783070 /* Assets.xcassets in Resources */,

@@ -25,7 +25,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         //set route to fill screen
         let screenSize:CGRect=self.view.frame
         route.frame=screenSize
-        route.image=UIImage(named: "FullMapRose.png")
+        route.image=UIImage(named: "floor1.png")
         
         scrollView.minimumZoomScale=1.0
         scrollView.maximumZoomScale=4.0
@@ -42,7 +42,8 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         let startPt=points[start]
         //let endPt=points[end]
         
-        let size=CGSizeApplyAffineTransform(route.image!.size, CGAffineTransformMakeScale(0.1, 0.1))
+        let scale=view.frame.height/route.image!.size.height
+        let size=CGSizeApplyAffineTransform(route.image!.size, CGAffineTransformMakeScale(scale, scale))
         
         UIGraphicsBeginImageContextWithOptions(size, true, 0.0)
         let context=UIGraphicsGetCurrentContext()
