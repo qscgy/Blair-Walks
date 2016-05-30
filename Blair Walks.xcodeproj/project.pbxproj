@@ -17,7 +17,6 @@
 		220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B01BB4C81300783070 /* PathfinderModel.swift */; };
 		220496B31BB4D7DD00783070 /* PQNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220496B21BB4D7DD00783070 /* PQNode.swift */; };
 		229F67951CF7E4970080643E /* 449-logo-270.png in Resources */ = {isa = PBXBuildFile; fileRef = 229F67941CF7E4970080643E /* 449-logo-270.png */; };
-		22A12D571BD707340046713E /* ROUTE_DATA.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22A12D561BD707340046713E /* ROUTE_DATA.csv */; };
 		22A4D1DD1CD3E13300091FDF /* JUNCTIONS_TEST.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22A4D1DC1CD3E13300091FDF /* JUNCTIONS_TEST.csv */; };
 		22A4D1DF1CD3E78300091FDF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A4D1DE1CD3E78300091FDF /* Queue.swift */; };
 		22A4D1E11CD3EA6B00091FDF /* PIXEL_COORDS.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */; };
@@ -67,7 +66,6 @@
 		220496B01BB4C81300783070 /* PathfinderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathfinderModel.swift; sourceTree = "<group>"; };
 		220496B21BB4D7DD00783070 /* PQNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PQNode.swift; sourceTree = "<group>"; };
 		229F67941CF7E4970080643E /* 449-logo-270.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "449-logo-270.png"; sourceTree = "<group>"; };
-		22A12D561BD707340046713E /* ROUTE_DATA.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ROUTE_DATA.csv; sourceTree = "<group>"; };
 		22A4D1DC1CD3E13300091FDF /* JUNCTIONS_TEST.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JUNCTIONS_TEST.csv; sourceTree = "<group>"; };
 		22A4D1DE1CD3E78300091FDF /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PIXEL_COORDS.csv; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 				2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */,
 				2204968E1BB4C6D100783070 /* Info.plist */,
 				22F706781BD324D400A7EE13 /* Line.swift */,
-				22A12D561BD707340046713E /* ROUTE_DATA.csv */,
 				22A4D1DC1CD3E13300091FDF /* JUNCTIONS_TEST.csv */,
 				22CD39441BEE6C3B00698E7C /* Coordinates.csv */,
 			);
@@ -298,7 +295,6 @@
 				22A4D1E11CD3EA6B00091FDF /* PIXEL_COORDS.csv in Resources */,
 				22E579CD1CF7A10200114BDE /* FullMapRose.png in Resources */,
 				220496881BB4C6D000783070 /* Main.storyboard in Resources */,
-				22A12D571BD707340046713E /* ROUTE_DATA.csv in Resources */,
 				22CD39451BEE6C3B00698E7C /* Coordinates.csv in Resources */,
 				229F67951CF7E4970080643E /* 449-logo-270.png in Resources */,
 			);

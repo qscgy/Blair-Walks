@@ -77,8 +77,10 @@ class PathfinderModel{
         //create an edge from each line
         for str:String in contentsArray{
             //print(str)
-            //print(str)
+            print(str)
             let edgeData=str.componentsSeparatedByString(",")
+            //print(coords[edgeData[0]])
+            //print(coords[edgeData[1]])
             let distance=dist(coords[edgeData[0]]!, p2: coords[edgeData[1]]!)
             //print(edgeData)
             edges.append(Edge(v1: edgeData[0], v2: edgeData[1], dist:distance))
