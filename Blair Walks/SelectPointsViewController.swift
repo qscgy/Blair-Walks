@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SelectPointsViewControllerDelegate{
-    func selctionDidEnd(p1:CGPoint,p2:CGPoint)
+    func selctionDidEnd(p1:CGPoint,p2:CGPoint,height:Int)
 }
 
 class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate {
@@ -48,18 +48,39 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
     
     func doubleTapped(recognizer:UITapGestureRecognizer){
         let touchLocation=recognizer.locationInView(map)
+        print(touchLocation)
         if(startLastChanged){
             end=touchLocation
         } else {
             start=touchLocation
         }
         startLastChanged = !startLastChanged
+        
+        map.image=UIImage(named: "FullMapRose")
+        let width:CGFloat=map.frame.width
+        let height:CGFloat=map.frame.height
+        let size=CGSizeMake(width, height)
+        //print(size.width)
+        //print(size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        let context = UIGraphicsGetCurrentContext()
+        map.image!.drawInRect(CGRect(origin: CGPointZero, size: size))
+        CGContextMoveToPoint(context, start.x, (start.y))
+        CGContextAddLineToPoint(context, start.x, (start.y))
+        CGContextMoveToPoint(context, end.x, (end.y))
+        CGContextAddLineToPoint(context, end.x, (end.y))
+        CGContextSetLineCap(context, .Round)
+        CGContextSetLineWidth(context, 15)
+        CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
+        CGContextStrokePath(context)
+        
+        map.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        print(start)
-        print(end)
-        delegate.selctionDidEnd(start, p2: end)
+    override func viewWillDisappear(animated: Bool) {
+        delegate.selctionDidEnd(start, p2: end,height: Int(map.bounds.height))
     }
 
     /*

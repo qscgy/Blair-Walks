@@ -55,6 +55,10 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
             vc.end=endInput.text!
             vc.points=convertCoords(pathfinder.coords)     //pass coordinate tuples as CGPoints from model to avoid having to parse the files again
         }
+        if(segue.identifier=="selectPoints"){
+            let vc=segue.destinationViewController as! SelectPointsViewController
+            vc.delegate=self
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -63,10 +67,12 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
         return true
     }
     
-    func selctionDidEnd(p1: CGPoint, p2: CGPoint) {
+    func selctionDidEnd(p1: CGPoint, p2: CGPoint,height:Int) {
         print("back")
-        startInput.text=pathfinder.closestPoint(p1)
-        endInput.text=pathfinder.closestPoint(p2)
+        let start=CGPoint(x: p1.x,y: CGFloat(height)-p1.y)
+        let end=CGPoint(x: p2.x,y: CGFloat(height)-p2.y)
+        startInput.text=pathfinder.closestPoint(start)
+        endInput.text=pathfinder.closestPoint(end)
     }
     
     //converts a dictionary mapping strings to tuples representing points to one mapping those strings to equivalent CGPoints

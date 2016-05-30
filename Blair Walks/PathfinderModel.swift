@@ -109,11 +109,16 @@ class PathfinderModel{
         print("hi")
         var closest=coords.keys.first
         let pointI=(Int(point.x),Int(point.y))
+        print(pointI)
         for key in coords.keys{
+            print(key)
             if dist(coords[key]!,p2: pointI)<dist(coords[closest!]!, p2: pointI){
+                print(coords[key]!)
+                print(dist(coords[key]!,p2: pointI))
                 closest=key
             }
         }
+        print(coords[closest!])
         return closest!
     }
 }
