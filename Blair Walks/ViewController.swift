@@ -14,7 +14,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var endInput: UITextField!
     @IBOutlet var routeOutput: UITextView!
     var pathStr:String!
-    var path:[Vertex]!
+    var path:[String:[Vertex]]!
     var pathfinder:PathfinderModel!
 
     override func viewDidLoad() {

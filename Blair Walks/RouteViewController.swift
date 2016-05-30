@@ -13,7 +13,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     var scrollView: UIScrollView!
     var start:String!
     var end:String!
-    var path:[Vertex]!
+    var path:[String:[Vertex]]!
     var points:[String:CGPoint]!    //every vertex, not just the ones that we're using
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         let context = UIGraphicsGetCurrentContext()
         route.image!.drawInRect(CGRect(origin: CGPointZero, size: size))
         CGContextMoveToPoint(context, startPt!.x, (height-startPt!.y))
-        for v:Vertex in path!{
+        for v:Vertex in path["floor1"]!{
             if v.name != start!{
                 CGContextAddLineToPoint(context, points[v.name]!.x, (height-points[v.name]!.y))
             }
@@ -67,6 +67,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         
         //CGContextAddLineToPoint(context, 0, 0)
         
+        CGContextSetLineCap(context, .Round)
         CGContextSetLineWidth(context, 15)
         CGContextSetStrokeColorWithColor(context, UIColor.blueColor().CGColor)
         CGContextStrokePath(context)

@@ -28,15 +28,31 @@ class PathfinderModel{
         self.edges=initEdgesFromFile(file)
         map=Graph(edges: edges)
     }
-    func findShortestPath(start:String,end:String)->[Vertex]{
+    func findShortestPath(start:String,end:String)->[String:[Vertex]]{
         if let _=map.graph[start]{
             if let _=map.graph[end]{ //make sure both are valid vertices
-                return map.findShortestPath(start,end: end)
+                
+                //We need to know the path on each floor in order to draw it, so we split it into a path on each floor.
+                var rawPath=map.findShortestPath(start,end: end)
+                var path=[String:[Vertex]]()
+                path["floor1"]=[]
+                path["floor2"]=[]
+                path["floor3"]=[]
+                //add each vertex to floor it's on
+                for i in 0...rawPath.count-1{
+                    let c1=String(rawPath[i].name[rawPath[i].name.startIndex])
+                    var appendTo="floor\(c1)"
+                    if(appendTo=="floor0"){
+                        appendTo="floor1"
+                    }
+                    path[appendTo]?.append(rawPath[i])
+                }
+                return path
             } else {
-                return []
+                return [String:[Vertex]]()
             }
         } else {
-            return []
+            return [String:[Vertex]]()
         }
     }
     func initEdgesFromFile(file:String)->[Edge]{
@@ -190,10 +206,12 @@ class Graph{
     }
 }
 
-func pathToString(path:[Vertex])->String{
+func pathToString(path:[String:[Vertex]])->String{
     var pathStr:String=""
-    for v in path{
-        pathStr += v.name+"\n"
+    for key in path.keys{
+        for v in path[key]!{
+            pathStr += v.name+"\n"
+        }
     }
     return pathStr
 }

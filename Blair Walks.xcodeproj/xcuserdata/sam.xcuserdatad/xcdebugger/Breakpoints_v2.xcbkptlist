@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "Vertex"
             landmarkType = "3">
          </BreakpointContent>
@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "findShortestPath(_:end:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -98,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "findShortestPath(_:end:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "findShortestPath(_:end:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -146,11 +146,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "Vertex"
             landmarkType = "3">
          </BreakpointContent>
@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "initCoordsFromFile(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -226,11 +226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486329465.282485"
+            timestampString = "486338889.017393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "initEdgesFromFile(_:)"
             landmarkType = "5">
          </BreakpointContent>
