@@ -15,8 +15,8 @@ import UIKit
 
 struct Constants {
     static let INVALID=[Vertex(name: "Invalid")]
+    static let FLOORS=["floor1","floor2","floor3"]
 }
-
 
 //Model for pathfinding algorithms
 class PathfinderModel{
@@ -103,6 +103,18 @@ class PathfinderModel{
         }
         //print(edges)
         return edges
+    }
+    
+    func closestPoint(point:CGPoint)->String{
+        print("hi")
+        var closest=coords.keys.first
+        let pointI=(Int(point.x),Int(point.y))
+        for key in coords.keys{
+            if dist(coords[key]!,p2: pointI)<dist(coords[closest!]!, p2: pointI){
+                closest=key
+            }
+        }
+        return closest!
     }
 }
 

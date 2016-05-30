@@ -75,6 +75,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ve5-kp-g4F">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Map Select"/>
+                                <connections>
+                                    <segue destination="jyL-p4-Y7l" kind="show" id="p4f-yC-4lm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -86,6 +93,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5Sa-2c-ILx" secondAttribute="trailing" constant="70" id="P34-4m-F5G"/>
                             <constraint firstItem="Lea-r6-Ang" firstAttribute="trailing" secondItem="5Sa-2c-ILx" secondAttribute="trailing" id="QR5-kb-9SO"/>
                             <constraint firstItem="cOk-zl-FRe" firstAttribute="top" secondItem="Lea-r6-Ang" secondAttribute="bottom" constant="56" id="RnI-uy-ph9"/>
+                            <constraint firstItem="cOk-zl-FRe" firstAttribute="top" secondItem="ve5-kp-g4F" secondAttribute="bottom" constant="8" symbolic="YES" id="XNG-Kj-KSb"/>
                             <constraint firstItem="qS2-lB-dkH" firstAttribute="centerX" secondItem="jVL-PJ-Gjm" secondAttribute="centerX" id="apZ-pt-eh2"/>
                             <constraint firstItem="YUm-OZ-Ehu" firstAttribute="trailing" secondItem="J6N-NV-YBy" secondAttribute="trailing" id="atd-Sb-85C"/>
                             <constraint firstItem="YUm-OZ-Ehu" firstAttribute="centerY" secondItem="Lea-r6-Ang" secondAttribute="centerY" id="jGV-vh-GeD"/>
@@ -96,6 +104,7 @@
                             <constraint firstItem="5Sa-2c-ILx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="u3r-tJ-1ff">
                                 <variation key="widthClass=compact" constant="31"/>
                             </constraint>
+                            <constraint firstItem="ve5-kp-g4F" firstAttribute="centerX" secondItem="cOk-zl-FRe" secondAttribute="centerX" id="xcZ-9c-BfA"/>
                             <constraint firstItem="5Sa-2c-ILx" firstAttribute="centerY" secondItem="J6N-NV-YBy" secondAttribute="centerY" id="yKc-EL-gy8"/>
                             <constraint firstItem="qS2-lB-dkH" firstAttribute="centerX" secondItem="cOk-zl-FRe" secondAttribute="centerX" id="zwi-gQ-ql0"/>
                         </constraints>
@@ -108,25 +117,28 @@
                                 <exclude reference="cOk-zl-FRe"/>
                                 <exclude reference="qS2-lB-dkH"/>
                                 <exclude reference="jVL-PJ-Gjm"/>
+                                <exclude reference="ve5-kp-g4F"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="mZO-v5-pwE"/>
+                                <exclude reference="atd-Sb-85C"/>
+                                <exclude reference="jGV-vh-GeD"/>
                                 <exclude reference="MQX-Gf-39N"/>
                                 <exclude reference="P34-4m-F5G"/>
                                 <exclude reference="u3r-tJ-1ff"/>
                                 <exclude reference="yKc-EL-gy8"/>
+                                <exclude reference="xcZ-9c-BfA"/>
                                 <exclude reference="4sv-ds-YNE"/>
                                 <exclude reference="HHG-f3-ORW"/>
                                 <exclude reference="QR5-kb-9SO"/>
                                 <exclude reference="RnI-uy-ph9"/>
+                                <exclude reference="XNG-Kj-KSb"/>
                                 <exclude reference="sbd-ho-Etb"/>
+                                <exclude reference="nCj-gD-0ct"/>
+                                <exclude reference="nos-Gj-hOe"/>
                                 <exclude reference="OXw-ux-d5p"/>
                                 <exclude reference="apZ-pt-eh2"/>
                                 <exclude reference="zwi-gQ-ql0"/>
-                                <exclude reference="atd-Sb-85C"/>
-                                <exclude reference="jGV-vh-GeD"/>
-                                <exclude reference="nCj-gD-0ct"/>
-                                <exclude reference="nos-Gj-hOe"/>
+                                <exclude reference="mZO-v5-pwE"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -138,25 +150,28 @@
                                 <include reference="cOk-zl-FRe"/>
                                 <include reference="qS2-lB-dkH"/>
                                 <include reference="jVL-PJ-Gjm"/>
+                                <include reference="ve5-kp-g4F"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="mZO-v5-pwE"/>
+                                <include reference="atd-Sb-85C"/>
+                                <include reference="jGV-vh-GeD"/>
                                 <include reference="MQX-Gf-39N"/>
                                 <include reference="P34-4m-F5G"/>
                                 <include reference="u3r-tJ-1ff"/>
                                 <include reference="yKc-EL-gy8"/>
+                                <include reference="xcZ-9c-BfA"/>
                                 <include reference="4sv-ds-YNE"/>
                                 <include reference="HHG-f3-ORW"/>
                                 <include reference="QR5-kb-9SO"/>
                                 <include reference="RnI-uy-ph9"/>
+                                <include reference="XNG-Kj-KSb"/>
                                 <include reference="sbd-ho-Etb"/>
+                                <include reference="nCj-gD-0ct"/>
+                                <include reference="nos-Gj-hOe"/>
                                 <include reference="OXw-ux-d5p"/>
                                 <include reference="apZ-pt-eh2"/>
                                 <include reference="zwi-gQ-ql0"/>
-                                <include reference="atd-Sb-85C"/>
-                                <include reference="jGV-vh-GeD"/>
-                                <include reference="nCj-gD-0ct"/>
-                                <include reference="nos-Gj-hOe"/>
+                                <include reference="mZO-v5-pwE"/>
                             </mask>
                         </variation>
                         <connections>
@@ -178,6 +193,23 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1503" y="388"/>
+        </scene>
+        <!--Select Points View Controller-->
+        <scene sceneID="JhU-fM-6rI">
+            <objects>
+                <viewController id="jyL-p4-Y7l" customClass="SelectPointsViewController" customModule="Blair_Walks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9qL-X7-J0Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="FWc-I0-pCy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mLU-rx-Zyi">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7A-yW-bpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239.5" y="1039"/>
         </scene>
         <!--Route View Controller-->
         <scene sceneID="Zno-7M-KXM">

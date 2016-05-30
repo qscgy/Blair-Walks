@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate {
+class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewControllerDelegate {
     
     @IBOutlet var startInput: UITextField!
     @IBOutlet var endInput: UITextField!
@@ -61,6 +61,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
         textField.resignFirstResponder()
         //print("resigning")
         return true
+    }
+    
+    func selctionDidEnd(p1: CGPoint, p2: CGPoint) {
+        print("back")
+        startInput.text=pathfinder.closestPoint(p1)
+        endInput.text=pathfinder.closestPoint(p2)
     }
     
     //converts a dictionary mapping strings to tuples representing points to one mapping those strings to equivalent CGPoints
