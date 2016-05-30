@@ -23,6 +23,8 @@
 		22A4D1E11CD3EA6B00091FDF /* PIXEL_COORDS.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */; };
 		22CD39451BEE6C3B00698E7C /* Coordinates.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22CD39441BEE6C3B00698E7C /* Coordinates.csv */; };
 		22D3F5DF1BC32DFB00340C8C /* OtherPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */; };
+		22DAF6681CFBC90E00B18A7B /* floor1_coords.csv in Resources */ = {isa = PBXBuildFile; fileRef = 22DAF6671CFBC90E00B18A7B /* floor1_coords.csv */; };
+		22DAF66A1CFBCAEB00B18A7B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAF6691CFBCAEB00B18A7B /* MapView.swift */; };
 		22DEAA6B1CF93FD500954716 /* floor1.png in Resources */ = {isa = PBXBuildFile; fileRef = 22DEAA6A1CF93FD500954716 /* floor1.png */; };
 		22E579CD1CF7A10200114BDE /* FullMapRose.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579CC1CF7A10200114BDE /* FullMapRose.png */; };
 		22E579CF1CF7A10F00114BDE /* FullMapRose2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579CE1CF7A10F00114BDE /* FullMapRose2.png */; };
@@ -71,6 +73,8 @@
 		22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PIXEL_COORDS.csv; sourceTree = "<group>"; };
 		22CD39441BEE6C3B00698E7C /* Coordinates.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Coordinates.csv; sourceTree = "<group>"; };
 		22D3F5DE1BC32DFB00340C8C /* OtherPriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherPriorityQueue.swift; sourceTree = "<group>"; };
+		22DAF6671CFBC90E00B18A7B /* floor1_coords.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = floor1_coords.csv; sourceTree = "<group>"; };
+		22DAF6691CFBCAEB00B18A7B /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		22DEAA6A1CF93FD500954716 /* floor1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor1.png; sourceTree = "<group>"; };
 		22E579CC1CF7A10200114BDE /* FullMapRose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FullMapRose.png; path = ../FullMapRose.png; sourceTree = "<group>"; };
 		22E579CE1CF7A10F00114BDE /* FullMapRose2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullMapRose2.png; sourceTree = "<group>"; };
@@ -129,8 +133,10 @@
 			children = (
 				22E579CB1CF7A0F800114BDE /* Images */,
 				220496821BB4C6CF00783070 /* AppDelegate.swift */,
+				22DAF6671CFBC90E00B18A7B /* floor1_coords.csv */,
 				220496841BB4C6D000783070 /* ViewController.swift */,
 				22A4D1DE1CD3E78300091FDF /* Queue.swift */,
+				22DAF6691CFBCAEB00B18A7B /* MapView.swift */,
 				220496B21BB4D7DD00783070 /* PQNode.swift */,
 				220496B01BB4C81300783070 /* PathfinderModel.swift */,
 				22A4D1E01CD3EA6B00091FDF /* PIXEL_COORDS.csv */,
@@ -284,6 +290,7 @@
 			files = (
 				22DEAA6B1CF93FD500954716 /* floor1.png in Resources */,
 				2204968D1BB4C6D100783070 /* LaunchScreen.storyboard in Resources */,
+				22DAF6681CFBC90E00B18A7B /* floor1_coords.csv in Resources */,
 				22E579CF1CF7A10F00114BDE /* FullMapRose2.png in Resources */,
 				2204968A1BB4C6D000783070 /* Assets.xcassets in Resources */,
 				22A4D1DD1CD3E13300091FDF /* JUNCTIONS_TEST.csv in Resources */,
@@ -325,6 +332,7 @@
 				22F706791BD324D400A7EE13 /* Line.swift in Sources */,
 				220496B31BB4D7DD00783070 /* PQNode.swift in Sources */,
 				220496831BB4C6CF00783070 /* AppDelegate.swift in Sources */,
+				22DAF66A1CFBCAEB00B18A7B /* MapView.swift in Sources */,
 				22F7067B1BD32A9800A7EE13 /* RouteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pathfinder=PathfinderModel(file: "JUNCTIONS_TEST",coords: "PIXEL_COORDS")
+        pathfinder=PathfinderModel(file: "JUNCTIONS_TEST",coords: "floor1_coords")
         routeOutput.text=""
         startInput.delegate=self
         endInput.delegate=self
