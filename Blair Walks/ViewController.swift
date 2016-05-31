@@ -87,6 +87,10 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
     func convertPath(path:String)->[String]{
         return path.componentsSeparatedByString("\n")
     }
+    
+    func mapButtonWasTapped(p1: CGPoint, p2: CGPoint, height: Int) {
+        performSegueWithIdentifier("showMap", sender: self)
+    }
 
 }
 

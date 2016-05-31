@@ -26,6 +26,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         scrollView.delegate=self
         scrollView.addSubview(route)
         view.addSubview(scrollView)
+        //scrollView.zoomScale=0.3
         
         //route.bounds=view.bounds
         //route.image=UIImage(named: "FullMapRose.png")
@@ -33,6 +34,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         
         //print(route.image)
         drawPath()
+        scrollView.zoomScale=0.3
     }
     
     /*

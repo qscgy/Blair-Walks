@@ -10,6 +10,7 @@ import UIKit
 
 protocol SelectPointsViewControllerDelegate{
     func selctionDidEnd(p1:CGPoint,p2:CGPoint,height:Int)
+    func mapButtonWasTapped(p1:CGPoint,p2:CGPoint,height:Int)
 }
 
 class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestureRecognizerDelegate {
@@ -33,6 +34,7 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
         scrollView.addSubview(map)
         scrollView.userInteractionEnabled=true
         view.addSubview(scrollView)
+        scrollView.zoomScale=0.3
         
         let tap=UITapGestureRecognizer(target: self, action: Selector("doubleTapped:"))
         tap.delegate=self
@@ -48,6 +50,7 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
     
     func doubleTapped(recognizer:UITapGestureRecognizer){
         let touchLocation=recognizer.locationInView(map)
+        let zoom=scrollView.zoomScale
         print(touchLocation)
         if(startLastChanged){
             end=touchLocation
@@ -56,6 +59,7 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
         }
         startLastChanged = !startLastChanged
         
+        scrollView.zoomScale=1.0
         map.image=UIImage(named: "FullMapRose")
         let width:CGFloat=map.frame.width
         let height:CGFloat=map.frame.height
@@ -70,13 +74,13 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
         CGContextMoveToPoint(context, end.x, (end.y))
         CGContextAddLineToPoint(context, end.x, (end.y))
         CGContextSetLineCap(context, .Round)
-        CGContextSetLineWidth(context, 15)
+        CGContextSetLineWidth(context, 30)
         CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
         CGContextStrokePath(context)
         
         map.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-
+        scrollView.zoomScale=zoom
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -99,3 +103,22 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
     }
 
 }
+
+struct Endpoint {
+    var x:CGFloat
+    var y:CGFloat
+    var visible=true
+    
+    init(x:CGFloat,y:CGFloat){
+        self.x=x
+        self.y=y
+    }
+    
+}
+
+
+
+
+
+
+
