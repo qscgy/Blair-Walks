@@ -112,7 +112,7 @@ class PathfinderModel{
         print(pointI)
         for key in coords.keys{
             print(key)
-            if dist(coords[key]!,p2: pointI)<dist(coords[closest!]!, p2: pointI){
+            if dist(coords[key]!,p2: pointI)<dist(coords[closest!]!, p2: pointI) && (key[key.startIndex]=="1" || key[key.startIndex]=="0"){
                 print(coords[key]!)
                 print(dist(coords[key]!,p2: pointI))
                 closest=key
@@ -219,6 +219,7 @@ class Graph{
             path.append(last!)
             last=cameFrom[last!]
         } while last != source!
+        path.append(source!)
         return path.reverse()
     }
 }

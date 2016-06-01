@@ -29,7 +29,6 @@
 		22E579CD1CF7A10200114BDE /* FullMapRose.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579CC1CF7A10200114BDE /* FullMapRose.png */; };
 		22E579CF1CF7A10F00114BDE /* FullMapRose2.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579CE1CF7A10F00114BDE /* FullMapRose2.png */; };
 		22E579D11CF7A11600114BDE /* FullMapRose3.png in Resources */ = {isa = PBXBuildFile; fileRef = 22E579D01CF7A11600114BDE /* FullMapRose3.png */; };
-		22F706791BD324D400A7EE13 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F706781BD324D400A7EE13 /* Line.swift */; };
 		22F7067B1BD32A9800A7EE13 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,7 +78,6 @@
 		22E579CC1CF7A10200114BDE /* FullMapRose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FullMapRose.png; path = ../FullMapRose.png; sourceTree = "<group>"; };
 		22E579CE1CF7A10F00114BDE /* FullMapRose2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullMapRose2.png; sourceTree = "<group>"; };
 		22E579D01CF7A11600114BDE /* FullMapRose3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FullMapRose3.png; sourceTree = "<group>"; };
-		22F706781BD324D400A7EE13 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		22F7067A1BD32A9800A7EE13 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,7 +145,6 @@
 				220496891BB4C6D000783070 /* Assets.xcassets */,
 				2204968B1BB4C6D100783070 /* LaunchScreen.storyboard */,
 				2204968E1BB4C6D100783070 /* Info.plist */,
-				22F706781BD324D400A7EE13 /* Line.swift */,
 				22A4D1DC1CD3E13300091FDF /* JUNCTIONS_TEST.csv */,
 				22CD39441BEE6C3B00698E7C /* Coordinates.csv */,
 			);
@@ -328,7 +325,6 @@
 				220496B11BB4C81300783070 /* PathfinderModel.swift in Sources */,
 				220496851BB4C6D000783070 /* ViewController.swift in Sources */,
 				22A4D1DF1CD3E78300091FDF /* Queue.swift in Sources */,
-				22F706791BD324D400A7EE13 /* Line.swift in Sources */,
 				220496B31BB4D7DD00783070 /* PQNode.swift in Sources */,
 				220496831BB4C6CF00783070 /* AppDelegate.swift in Sources */,
 				22DAF66A1CFBCAEB00B18A7B /* MapView.swift in Sources */,

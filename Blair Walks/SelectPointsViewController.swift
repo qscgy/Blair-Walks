@@ -66,6 +66,8 @@ class SelectPointsViewController: UIViewController,UIScrollViewDelegate,UIGestur
         let size=CGSizeMake(width, height)
         //print(size.width)
         //print(size.height)
+        
+        //draws a dot at start and end
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         let context = UIGraphicsGetCurrentContext()
         map.image!.drawInRect(CGRect(origin: CGPointZero, size: size))

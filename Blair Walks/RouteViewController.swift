@@ -5,6 +5,7 @@
 //  Created by Sam Ehrenstein on 10/17/15.
 //  Copyright © 2015 MBHS Smartphone Programming Club. All rights reserved.
 //
+//  Note: 1 px = 2.912 in
 
 import UIKit
 
@@ -15,11 +16,16 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     var end:String!
     var path:[String:[Vertex]]!
     var points:[String:CGPoint]!    //every vertex, not just the ones that we're using
+    var floor="floor1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        route=UIImageView(image: UIImage(named: "FullMapRose.png"))
+        if floor=="floor1" {
+            route=UIImageView(image: UIImage(named: "FullMapRose.png"))
+        } else if floor=="floor2" {
+            route=UIImageView(image: UIImage(named: "FullMapRose2.png"))
+        }
         scrollView=UIScrollView(frame: view.bounds)
         scrollView.contentSize=route.bounds.size
         scrollView.minimumZoomScale=0.1
@@ -48,7 +54,6 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     
     
     func drawPath(){
-        let startPt=points[start]
         let width:CGFloat=route.frame.width
         let height:CGFloat=route.frame.height
         let scale=view.bounds.height/route.image!.size.height
@@ -60,8 +65,10 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         let context = UIGraphicsGetCurrentContext()
         route.image!.drawInRect(CGRect(origin: CGPointZero, size: size))
-        CGContextMoveToPoint(context, startPt!.x, (height-startPt!.y))
-        for v:Vertex in path["floor1"]!{
+        
+        //draw all of the points on the floor for this VC
+        CGContextMoveToPoint(context, points[(path[floor]?.first?.name)!]!.x, (height-points[(path[floor]?.first?.name)!]!.y))
+        for v:Vertex in path[floor]!{
             if v.name != start!{
                 CGContextAddLineToPoint(context, points[v.name]!.x, (height-points[v.name]!.y))
             }
@@ -82,4 +89,20 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         //print(scrollView.zoomScale)
         return self.route
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier=="toF2"){
+            let vc=segue.destinationViewController as! RouteViewController
+            vc.path=path
+            vc.start=start
+            vc.end=end
+            vc.points=points
+            if(floor=="floor1"){
+                vc.floor="floor2"
+            } else {
+                vc.floor="floor3"
+            }
+        }
+    }
+
 }

@@ -194,11 +194,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/PathfinderModel.swift"
-            timestampString = "486343922.268348"
+            timestampString = "486439184.482982"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "initCoordsFromFile(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -242,11 +242,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/RouteViewController.swift"
-            timestampString = "486263937.595911"
+            timestampString = "486399529.757537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "RouteViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -290,12 +290,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Blair Walks/ViewController.swift"
-            timestampString = "486353873.604291"
+            timestampString = "486413144.559646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "mapButtonWasTapped(_:p2:height:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Blair Walks/RouteViewController.swift"
+            timestampString = "486413623.462931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "drawPath()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

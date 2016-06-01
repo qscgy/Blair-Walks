@@ -48,12 +48,19 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="showMap"){
+        if(segue.identifier=="showMap" || segue.identifier=="toF2"){
             let vc=segue.destinationViewController as! RouteViewController
             vc.path=path!  //pass path as string
             vc.start=startInput!.text!
             vc.end=endInput.text!
             vc.points=convertCoords(pathfinder.coords)     //pass coordinate tuples as CGPoints from model to avoid having to parse the files again
+            if(segue.identifier=="showMap"){
+                vc.floor="floor1"
+            } else  if segue.identifier=="toF2"{
+                vc.floor="floor2"
+            } else {
+                vc.floor="floor3"
+            }
         }
         if(segue.identifier=="selectPoints"){
             let vc=segue.destinationViewController as! SelectPointsViewController
