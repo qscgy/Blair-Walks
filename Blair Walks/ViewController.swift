@@ -48,7 +48,7 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="showMap" || segue.identifier=="toF2"){
+        if(segue.identifier=="showMap" || segue.identifier=="toF2" || segue.identifier=="toF3"){
             let vc=segue.destinationViewController as! RouteViewController
             vc.path=path!  //pass path as string
             vc.start=startInput!.text!

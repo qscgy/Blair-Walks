@@ -54,6 +54,8 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     
     
     func drawPath(){
+        if let pathFloor=path[floor]{
+        if pathFloor.count>0{
         let width:CGFloat=route.frame.width
         let height:CGFloat=route.frame.height
         let scale=view.bounds.height/route.image!.size.height
@@ -75,7 +77,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         }
         
         //CGContextAddLineToPoint(context, 0, 0)
-        
+    
         CGContextSetLineCap(context, .Round)
         CGContextSetLineWidth(context, 15)
         CGContextSetStrokeColorWithColor(context, UIColor.blueColor().CGColor)
@@ -83,6 +85,8 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         
         route.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        }
+        }
     }
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {

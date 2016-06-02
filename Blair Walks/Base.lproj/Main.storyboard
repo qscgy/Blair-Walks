@@ -80,12 +80,17 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Floor 2"/>
                                 <connections>
+                                    <action selector="findPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hRE-Af-f03"/>
                                     <segue destination="PpR-1u-0er" kind="show" identifier="toF2" id="1yp-Bq-bd5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6S-2m-jv3">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Floor 3"/>
+                                <connections>
+                                    <action selector="findPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCT-2R-0vy"/>
+                                    <segue destination="D57-54-SyN" kind="show" identifier="toF3" id="tuf-QQ-MJN"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jVL-PJ-Gjm">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -141,29 +146,29 @@
                                 <exclude reference="jVL-PJ-Gjm"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="atd-Sb-85C"/>
-                                <exclude reference="jGV-vh-GeD"/>
+                                <exclude reference="mZO-v5-pwE"/>
                                 <exclude reference="MQX-Gf-39N"/>
                                 <exclude reference="P34-4m-F5G"/>
                                 <exclude reference="u3r-tJ-1ff"/>
                                 <exclude reference="yKc-EL-gy8"/>
-                                <exclude reference="xcZ-9c-BfA"/>
                                 <exclude reference="4sv-ds-YNE"/>
                                 <exclude reference="HHG-f3-ORW"/>
                                 <exclude reference="QR5-kb-9SO"/>
-                                <exclude reference="OXw-ux-d5p"/>
-                                <exclude reference="apZ-pt-eh2"/>
-                                <exclude reference="zwi-gQ-ql0"/>
+                                <exclude reference="NQ2-dA-GUd"/>
+                                <exclude reference="uxE-ag-PAK"/>
                                 <exclude reference="RnI-uy-ph9"/>
                                 <exclude reference="XNG-Kj-KSb"/>
                                 <exclude reference="sbd-ho-Etb"/>
-                                <exclude reference="nCj-gD-0ct"/>
-                                <exclude reference="nos-Gj-hOe"/>
+                                <exclude reference="OXw-ux-d5p"/>
+                                <exclude reference="apZ-pt-eh2"/>
+                                <exclude reference="zwi-gQ-ql0"/>
+                                <exclude reference="xcZ-9c-BfA"/>
                                 <exclude reference="NQe-LA-nk4"/>
                                 <exclude reference="vtC-9G-dMN"/>
-                                <exclude reference="NQ2-dA-GUd"/>
-                                <exclude reference="uxE-ag-PAK"/>
-                                <exclude reference="mZO-v5-pwE"/>
+                                <exclude reference="atd-Sb-85C"/>
+                                <exclude reference="jGV-vh-GeD"/>
+                                <exclude reference="nCj-gD-0ct"/>
+                                <exclude reference="nos-Gj-hOe"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -180,29 +185,29 @@
                                 <include reference="jVL-PJ-Gjm"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="atd-Sb-85C"/>
-                                <include reference="jGV-vh-GeD"/>
+                                <include reference="mZO-v5-pwE"/>
                                 <include reference="MQX-Gf-39N"/>
                                 <include reference="P34-4m-F5G"/>
                                 <include reference="u3r-tJ-1ff"/>
                                 <include reference="yKc-EL-gy8"/>
-                                <include reference="xcZ-9c-BfA"/>
                                 <include reference="4sv-ds-YNE"/>
                                 <include reference="HHG-f3-ORW"/>
                                 <include reference="QR5-kb-9SO"/>
-                                <include reference="OXw-ux-d5p"/>
-                                <include reference="apZ-pt-eh2"/>
-                                <include reference="zwi-gQ-ql0"/>
+                                <include reference="NQ2-dA-GUd"/>
+                                <include reference="uxE-ag-PAK"/>
                                 <include reference="RnI-uy-ph9"/>
                                 <include reference="XNG-Kj-KSb"/>
                                 <include reference="sbd-ho-Etb"/>
-                                <include reference="nCj-gD-0ct"/>
-                                <include reference="nos-Gj-hOe"/>
+                                <include reference="OXw-ux-d5p"/>
+                                <include reference="apZ-pt-eh2"/>
+                                <include reference="zwi-gQ-ql0"/>
+                                <include reference="xcZ-9c-BfA"/>
                                 <include reference="NQe-LA-nk4"/>
                                 <include reference="vtC-9G-dMN"/>
-                                <include reference="NQ2-dA-GUd"/>
-                                <include reference="uxE-ag-PAK"/>
-                                <include reference="mZO-v5-pwE"/>
+                                <include reference="atd-Sb-85C"/>
+                                <include reference="jGV-vh-GeD"/>
+                                <include reference="nCj-gD-0ct"/>
+                                <include reference="nos-Gj-hOe"/>
                             </mask>
                         </variation>
                     </view>
@@ -285,6 +290,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Si1-IQ-cLh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FGu-RG-7ed">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -293,6 +299,23 @@
                 <swipeGestureRecognizer direction="right" id="w3E-pj-Xac"/>
             </objects>
             <point key="canvasLocation" x="2920.5" y="389"/>
+        </scene>
+        <!--Route View Controller-->
+        <scene sceneID="Ypn-br-weU">
+            <objects>
+                <viewController id="D57-54-SyN" customClass="RouteViewController" customModule="Blair_Walks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F2K-oJ-kuN"/>
+                        <viewControllerLayoutGuide type="bottom" id="LRN-cs-Ka1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZtW-Ik-Wbp">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h8P-nx-Gqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3591" y="389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D3Y-MQ-B3i">
