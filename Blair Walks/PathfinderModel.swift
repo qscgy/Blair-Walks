@@ -29,6 +29,7 @@ class PathfinderModel{
         map=Graph(edges: edges)
     }
     func findShortestPath(start:String,end:String)->[String:[Vertex]]{
+        //print("hi")
         if let _=map.graph[start]{
             if let _=map.graph[end]{ //make sure both are valid vertices
                 

@@ -25,6 +25,8 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
             route=UIImageView(image: UIImage(named: "FullMapRose.png"))
         } else if floor=="floor2" {
             route=UIImageView(image: UIImage(named: "FullMapRose2.png"))
+        } else {
+            route=UIImageView(image: UIImage(named: "FullMapRose3.png"))
         }
         scrollView=UIScrollView(frame: view.bounds)
         scrollView.contentSize=route.bounds.size
@@ -54,6 +56,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     
     
     func drawPath(){
+        print("hi")
         if let pathFloor=path[floor]{
         if pathFloor.count>0{
         let width:CGFloat=route.frame.width
@@ -69,7 +72,8 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         route.image!.drawInRect(CGRect(origin: CGPointZero, size: size))
         
         //draw all of the points on the floor for this VC
-        CGContextMoveToPoint(context, points[(path[floor]?.first?.name)!]!.x, (height-points[(path[floor]?.first?.name)!]!.y))
+        //print(pathFloor.first?.name)
+        CGContextMoveToPoint(context, points[(pathFloor.first?.name)!]!.x, (height-points[(pathFloor.first?.name)!]!.y))
         for v:Vertex in path[floor]!{
             if v.name != start!{
                 CGContextAddLineToPoint(context, points[v.name]!.x, (height-points[v.name]!.y))
