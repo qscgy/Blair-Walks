@@ -6,6 +6,7 @@
 //  Copyright © 2015 MBHS Smartphone Programming Club. All rights reserved.
 //
 //  Note: 1 px = 2.912 in
+//  Also, all of the stairs are 60 ft, give or take a few feet
 
 import UIKit
 
