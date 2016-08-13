@@ -16,6 +16,7 @@ import UIKit
 struct Constants {
     static let INVALID=[Vertex(name: "Invalid")]
     static let FLOORS=["floor1","floor2","floor3"]
+    static let ALTERNATES = ["SAC":"1SAC1"]
 }
 
 //Model for pathfinding algorithms
@@ -28,8 +29,15 @@ class PathfinderModel{
         self.edges=initEdgesFromFile(file)
         map=Graph(edges: edges)
     }
-    func findShortestPath(start:String,end:String)->[String:[Vertex]]{
-        //print("hi")
+    func findShortestPath(var start:String,var end:String)->[String:[Vertex]]{
+        //replace non-numeric locations with their codes
+        if let str=Constants.ALTERNATES[start.uppercaseString]{
+            start=str
+        }
+        if let str=Constants.ALTERNATES[end.uppercaseString]{
+            end=str
+        }
+        
         if let _=map.graph[start]{
             if let _=map.graph[end]{ //make sure both are valid vertices
                 
@@ -39,7 +47,7 @@ class PathfinderModel{
                 path["floor1"]=[]
                 path["floor2"]=[]
                 path["floor3"]=[]
-                //add each vertex to floor it's on
+                //add each vertex to the floor it's on
                 for i in 0...rawPath.count-1{
                     let c1=String(rawPath[i].name[rawPath[i].name.startIndex])
                     var appendTo="floor\(c1)"
@@ -113,6 +121,7 @@ class PathfinderModel{
         print(pointI)
         for key in coords.keys{
             print(key)
+            //This should be changed at some point so that it checks if the points are on the same floor (for map select)
             if dist(coords[key]!,p2: pointI)<dist(coords[closest!]!, p2: pointI) && (key[key.startIndex]=="1" || key[key.startIndex]=="0"){
                 print(coords[key]!)
                 print(dist(coords[key]!,p2: pointI))
