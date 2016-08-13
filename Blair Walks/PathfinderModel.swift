@@ -16,7 +16,7 @@ import UIKit
 struct Constants {
     static let INVALID=[Vertex(name: "Invalid")]
     static let FLOORS=["floor1","floor2","floor3"]
-    static let ALTERNATES = ["SAC":"1SAC1"]
+    static let ALTERNATES = ["SAC":"1SAC1","GYM":"1GYM","MEDIA":"1MEDIA"]
 }
 
 //Model for pathfinding algorithms
