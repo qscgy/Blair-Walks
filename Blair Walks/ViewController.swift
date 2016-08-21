@@ -31,7 +31,7 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
         let end=endInput.text!
         path=pathfinder.findShortestPath(start, end: end)
         pathStr=pathToString(path)
-        routeOutput.text=pathStr
+        //routeOutput.text=pathStr
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
