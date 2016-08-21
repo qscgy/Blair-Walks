@@ -15,7 +15,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     var scrollView: UIScrollView!
     var start:String!
     var end:String!
-    var path:[String:[Vertex]]!
+    var path:[String:[Vertex]]!     //holds each floor's portion of the path
     var points:[String:CGPoint]!    //every vertex, not just the ones that we're using
     var floor="floor1"
     
