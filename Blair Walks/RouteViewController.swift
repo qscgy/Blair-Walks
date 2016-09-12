@@ -12,7 +12,8 @@ import UIKit
 
 class RouteViewController: UIViewController,UIScrollViewDelegate {
     var route: UIImageView!
-    var scrollView: UIScrollView!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var floorLabel:UILabel!
     var start:String!
     var end:String!
     var path:[String:[Vertex]]!     //holds each floor's portion of the path
@@ -21,7 +22,10 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupMap()
+    }
+    
+    func setupMap(){
         if floor=="floor1" {
             route=UIImageView(image: UIImage(named: "FullMapRose.png"))
         } else if floor=="floor2" {
@@ -29,7 +33,7 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         } else {
             route=UIImageView(image: UIImage(named: "FullMapRose3.png"))
         }
-        scrollView=UIScrollView(frame: view.bounds)
+        //scrollView=UIScrollView(frame: view.bounds)
         scrollView.contentSize=route.bounds.size
         scrollView.minimumZoomScale=0.1
         scrollView.delegate=self
@@ -44,6 +48,43 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         //print(route.image)
         drawPath()
         scrollView.zoomScale=0.3
+        view.sendSubviewToBack(scrollView)
+        
+        switch(floor){
+        case "floor1":
+            floorLabel.text="Floor 1"
+            break
+        case "floor2":
+            floorLabel.text="Floor 2"
+            break
+        default:
+            floorLabel.text="Floor 3"
+            break
+        }
+    }
+    
+    @IBAction func goUp(sender: AnyObject) {
+        print("going up")
+        if(floor == "floor1"){
+            floor="floor2"
+            setupMap()
+        } else if floor == "floor2" {
+            floor="floor3"
+            setupMap()
+        }
+        print(floor)
+    }
+    
+    @IBAction func goDown(sender: AnyObject){
+        print("going down")
+        if(floor == "floor3"){
+            floor="floor2"
+            setupMap()
+        } else if floor == "floor2" {
+            floor="floor1"
+            setupMap()
+        }
+        print(floor)
     }
     
     /*
@@ -54,7 +95,6 @@ class RouteViewController: UIViewController,UIScrollViewDelegate {
         drawPath()
     }
     */
-    
     
     func drawPath(){
         print("hi")

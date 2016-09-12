@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewControllerDelegate {
+class ViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var startInput: UITextField!
     @IBOutlet var endInput: UITextField!
     @IBOutlet var routeOutput: UITextView!
+    @IBOutlet var errorLabel:UILabel!
     var pathStr:String!
     var path:[String:[Vertex]]!
     var pathfinder:PathfinderModel!
@@ -24,6 +25,7 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
         routeOutput.text=""
         startInput.delegate=self
         endInput.delegate=self
+        errorLabel.text=""
     }
 
     @IBAction func findPath(sender: AnyObject) {
@@ -48,24 +50,26 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier=="showMap" || segue.identifier=="toF2" || segue.identifier=="toF3"){
+        if(segue.identifier=="showMap"){
             let vc=segue.destinationViewController as! RouteViewController
             vc.path=path!  //pass path as string
             vc.start=startInput!.text!
             vc.end=endInput.text!
             vc.points=convertCoords(pathfinder.coords)     //pass coordinate tuples as CGPoints from model to avoid having to parse the files again
-            if(segue.identifier=="showMap"){
-                vc.floor="floor1"
-            } else  if segue.identifier=="toF2"{
-                vc.floor="floor2"
+            if let startFloor=pathfinder.startFloor{
+                vc.floor=startFloor
+                errorLabel.text=""
             } else {
-                vc.floor="floor3"
+                errorLabel.text="Error: Check your start and end points."
+                vc.floor="floor1"
             }
         }
+        /*
         if(segue.identifier=="selectPoints"){
             let vc=segue.destinationViewController as! SelectPointsViewController
             vc.delegate=self
         }
+*/
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -95,8 +99,13 @@ class ViewController: UIViewController,UITextFieldDelegate,SelectPointsViewContr
         return path.componentsSeparatedByString("\n")
     }
     
-    func mapButtonWasTapped(p1: CGPoint, p2: CGPoint, height: Int) {
-        performSegueWithIdentifier("showMap", sender: self)
+    @IBAction func goToMap(sender:AnyObject) {
+        print(pathfinder.invalid)
+        if(!pathfinder.invalid){
+            performSegueWithIdentifier("showMap", sender: self)
+        } else {
+            errorLabel.text="Error: Check your start and end points."
+        }
     }
 
 }

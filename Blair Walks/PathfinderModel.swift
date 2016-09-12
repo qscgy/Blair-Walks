@@ -16,7 +16,7 @@ import UIKit
 struct Constants {
     static let INVALID=[Vertex(name: "Invalid")]
     static let FLOORS=["floor1","floor2","floor3"]
-    static let ALTERNATES = ["SAC":"1SAC1","GYM":"1GYM","MEDIA":"1MEDIA"]
+    static let ALTERNATES = ["SAC":"1SAC1","CAFE":"1SAC1","GYM":"1GYM","MEDIA":"1MEDIA"]
 }
 
 //Model for pathfinding algorithms
@@ -24,6 +24,8 @@ class PathfinderModel{
     var map:Graph=Graph()
     var coords:[String:(Int,Int)]=[String:(Int,Int)]()
     var edges:[Edge]=[]
+    var startFloor:String!
+    var invalid=true
     init(file:String, coords:String){
         self.coords=initCoordsFromFile(coords)
         self.edges=initEdgesFromFile(file)
@@ -43,6 +45,8 @@ class PathfinderModel{
                 
                 //We need to know the path on each floor in order to draw it, so we split it into a path on each floor.
                 var rawPath=map.findShortestPath(start,end: end)
+                let startFloorNum=String(rawPath[0].name[rawPath[0].name.startIndex])
+                startFloor="floor\(startFloorNum)"
                 var path=[String:[Vertex]]()
                 path["floor1"]=[]
                 path["floor2"]=[]
@@ -56,11 +60,14 @@ class PathfinderModel{
                     }
                     path[appendTo]?.append(rawPath[i])
                 }
+                invalid=false
                 return path
             } else {
+                invalid=true
                 return [String:[Vertex]]()
             }
         } else {
+            invalid=true
             return [String:[Vertex]]()
         }
     }
