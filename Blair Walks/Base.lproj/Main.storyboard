@@ -275,7 +275,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="321" id="5dY-UL-AdV"/>
                                 </constraints>
-                                <string key="text">Type the start and end room numbers (or whatever's in that column on your schedule) into their respective boxes. When you tap on a "Floor X" button, it will show you the portion of your route that is on that floor. Also, room numbers correspond to floors, so if you are directed to a stairwell, take the stairwell in the direction of your destination (up or down). Blair Walks will never give you a route that goes up, then back down, or down, then back up.</string>
+                                <string key="text">Type the start and end room numbers (or whatever's in that column on your schedule) into their respective boxes, and tap "Go!" Use the Up and down buttons to change which floor you are seeing. Also, room numbers correspond to floors, so if you are directed to a stairwell, take the stairwell in the direction of your destination (up or down). Blair Walks will never give you a route that goes up, then back down, or down, then back up.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
